@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Post from "./Post";
 import axios from "axios";
+import PostCard from "./PostCard";
 
 class Posts extends Component {
     state = {
@@ -25,17 +26,16 @@ class Posts extends Component {
     render() {
         
         
-
-
         return (
             <div>
                 <h1>POSTS</h1>
+                <PostCard />
                 {this.state.status === "success" &&
                     <div>
 
                         {this.state.posts.map((post) => {
                             return (
-                                <h1>hola</h1>
+                                <h1>{post.text}</h1>
                             )
                         })}
                         {/*
