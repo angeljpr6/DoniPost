@@ -58,9 +58,8 @@ body {
 
 #contenido {
   display:flex;
-  padding-top: 6%;
   width: 540px;
-  margin: auto;
+  margin: 100px auto;
 }
 
 
@@ -74,8 +73,8 @@ body {
   width: 10%;
   min-height: 200px;
   min-width: 200px;
-  margin-top: 100px;
-  margin-left: 150px;
+  margin-top: 25px;
+  margin-left: 15%;
 
 
 }
