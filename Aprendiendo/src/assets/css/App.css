@@ -13,11 +13,18 @@ body {
 }
 
 .center {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Centra el elemento horizontalmente */
+  width: 70%; /* Ancho del elemento */
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid #ccc;
-  margin: 1% 15%;
+  padding: 10px; /* Añade relleno para separar el contenido */
+  background-color: #00001a; /* Fondo blanco (opcional) */
+  z-index: 1000;
 }
 
 #logo img {
@@ -51,22 +58,25 @@ body {
 
 #contenido {
   display: flex;
+  padding-top: 6%;
 }
 
 #barraLat {
+  position: fixed;
   margin-left: 19.5%;
   margin-right: 10%;
   text-align: start;
   background-color: #32314e;
   color: white;
   border-radius: 20px;
-  height: 50%;
+  height: 20%;
   width: 10%;
   padding-left: 2%;
 
 }
 
 #post {
+  margin-left: 250%;
   color: white;
   background-color: #32314e;
   border-radius: 10px;
