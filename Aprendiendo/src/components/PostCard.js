@@ -30,6 +30,7 @@ class PostCard extends Component {
             var listPosts = this.state.posts.map((post) => {
             
                 return (
+                    
                     <div id="post">
                         <h3>@{post.user}</h3>
                         <p>{post.text}</p>

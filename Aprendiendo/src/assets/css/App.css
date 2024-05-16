@@ -75,16 +75,23 @@ body {
 
 }
 
+
+
 #post {
-  margin-left: 250%;
+  margin-left: 100%;
+  margin-top: 20px;
   color: white;
   background-color: #32314e;
   border-radius: 10px;
-  width: 200%;
+  width: 500px; /* Ancho fijo */
+  padding: 20px; /* Espacio interior */
   text-align: left;
   text-indent: 2%;
-
+  overflow: hidden; /* Oculta el contenido que se desborde */
+  overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
+  
 }
+
 
 #post h3{
   color: #aaa6ca;
