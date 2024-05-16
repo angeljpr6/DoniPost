@@ -1,7 +1,9 @@
 body {
   text-align: center;
+  align-items: center;
   margin: 0px;
   padding: 0px;
+  background-color: #00001a;
 
   /*FUENTES*/
   font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -12,14 +14,78 @@ body {
 
 .center {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  border-bottom: 10px;
-  border-color: black
+  flex-direction: row;
+  border-bottom: 2px solid #ccc;
+  margin-left: 20%;
+  margin-bottom: 10px;
+  
 }
 
 #logo img {
   height: 60px;
+  flex: 0 0 auto;
 
 }
+
+#brand {
+  color: white;
+  font-size: 30px;
+  flex: 1; /* Ocupará el espacio restante */
+  text-align: center; /* Centrar el texto */
+}
+
+#searchBar input[type="text"] {
+  padding: 8px;
+  background-color: #aaa6ca;
+  border-radius:50px;
+  border: 1px solid #ccc;
+  width: 200px; /* Ancho de la barra de búsqueda */
+  box-sizing: border-box; /* Incluye el padding y el borde en el ancho */
+  font-size: 14px;
+  outline: none; /* Eliminar el borde de enfoque */
+}
+
+
+#contenido {
+  display: flex;
+}
+
+#barraLat {
+  margin-left: 19.5%;
+  margin-right: 10%;
+  text-align: start;
+  background-color: #32314e;
+  color: white;
+  border-radius: 20px;
+  height: 50%;
+  width: 10%;
+  padding-left: 2%;
+
+}
+
+#post {
+  background-color: #32314e;
+  border-radius: 10px;
+  width: 150%;
+  text-align: left;
+  text-indent: 2%;
+
+}
+
+#post h3{
+  color: #00001a;
+  padding-top: 10px;
+  margin-bottom: -5px;
+}
+
+#date {
+  color: #aaa6ca;
+  padding-bottom: 10px;
+  text-align: right;
+  padding-right: 2%;
+}
+
+
 

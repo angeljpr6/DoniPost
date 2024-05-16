@@ -21,18 +21,16 @@ class PostCard extends Component {
             });
     }
 
-
-
     render() {
         if (this.state.posts.length >= 1) {
 
             var listPosts = this.state.posts.map((post) => {
                 console.log("entro")
                 return (
-                    <div>
+                    <div id="post">
                         <h3>{post.user}</h3>
                         <p>{post.text}</p>
-                        <p>{post.date}</p>
+                        <p id="date">{post.date}</p>
                     </div>
                 )
             })
