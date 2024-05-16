@@ -9,18 +9,21 @@ import BarraLateral from './components/BarraLateral';
 
 
 function App() {
-  var usuario="Fede"
+  var usuario = "Fede"
   return (
     <div className="App">
-      
+
 
       <header className="App-header">
-        <Header/>
+        <Header />
       </header>
-
+      <BarraLateral />
       <div id="contenido">
-        <BarraLateral/>
-        <PostCard/>
+        
+        <div id="postsContent">
+          <PostCard />
+        </div>
+
       </div>
 
     </div>
