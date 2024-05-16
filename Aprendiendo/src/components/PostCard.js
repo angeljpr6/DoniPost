@@ -27,7 +27,7 @@ class PostCard extends Component {
         if (this.state.posts.length >= 1) {
 
             var listPosts = this.state.posts.map((post) => {
-                console.log("entro")
+            
                 return (
                     <div>
                         <h3>{post.user}</h3>
