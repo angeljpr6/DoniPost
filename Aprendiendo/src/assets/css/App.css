@@ -68,13 +68,13 @@ body {
 #post {
   background-color: #32314e;
   border-radius: 10px;
-  width: 150%;
+  width: 200%;
   text-align: left;
   text-indent: 2%;
 
 }
 
-#post h3{
+#post h2{
   color: #00001a;
   padding-top: 10px;
   margin-bottom: -5px;
@@ -85,6 +85,13 @@ body {
   padding-bottom: 10px;
   text-align: right;
   padding-right: 2%;
+}
+
+#accionesPost {
+  display: flex;
+  padding-left: 10%;
+  padding-right: 60%;
+  justify-content: space-between;
 }
 
 

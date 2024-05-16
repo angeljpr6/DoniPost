@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import meGusta from '../assets/images/me-gusta.png'
+import comentario from '../assets/images/comentario.png'
+import repost from '../assets/images/repost.png'
 import axios from "axios";
 
 class PostCard extends Component {
@@ -28,9 +31,21 @@ class PostCard extends Component {
                 console.log("entro")
                 return (
                     <div id="post">
-                        <h3>{post.user}</h3>
+                        <h3>@{post.user}</h3>
                         <p>{post.text}</p>
                         <p id="date">{post.date}</p>
+                        <div id = "accionesPost">
+                            <a href="#" className="dar-me-gusta">
+                                <img src={comentario} alt="iconoMeGusta"></img>
+                            </a>
+                            <a href="#" className="dar-repost">
+                                <img src={repost} alt="iconoRePost"></img>
+                            </a>
+                            <a href="#" className="entrar-comentarios">
+                                <img src={meGusta} alt="iconoComentarios"></img>
+                            </a>
+                        </div>
+                        
                     </div>
                 )
             })
