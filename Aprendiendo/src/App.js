@@ -5,6 +5,7 @@ import SeccionPruebas from './components/SeccionPruebas';
 import Posts from './components/Posts';
 import Header from './components/Header';
 import PostCard from './components/PostCard';
+import BarraLateral from './components/BarraLateral';
 
 
 function App() {
@@ -14,10 +15,14 @@ function App() {
       
 
       <header className="App-header">
-
-        <PostCard/>
-        
+        <Header/>
       </header>
+
+      <div id="contenido">
+        <BarraLateral/>
+        <PostCard/>
+      </div>
+
     </div>
   );
 }

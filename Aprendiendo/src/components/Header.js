@@ -23,9 +23,9 @@ class Header extends Component {
                         </span>
                     </div>
 
-                    {/* Menu */}
-                    <div id="navBar">
-                        <p>HOLA</p>
+                    {/* BARRA DE BUSQUEDA */}
+                    <div id="searchBar">
+                        <input type="text" placeholder="Buscar..." />
                     </div>
 
                     {/* LIMPIAR FLOTADOS */}
