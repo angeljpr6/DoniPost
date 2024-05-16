@@ -14,13 +14,10 @@ body {
 
 .center {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-direction: row;
+  justify-content: space-between;
   border-bottom: 2px solid #ccc;
-  margin-left: 20%;
-  margin-bottom: 10px;
-  
+  margin: 1% 15%;
 }
 
 #logo img {
@@ -34,6 +31,10 @@ body {
   font-size: 30px;
   flex: 1; /* Ocupará el espacio restante */
   text-align: center; /* Centrar el texto */
+}
+
+#searchBar{
+  margin-right: -30%;
 }
 
 #searchBar input[type="text"] {
@@ -66,6 +67,7 @@ body {
 }
 
 #post {
+  color: white;
   background-color: #32314e;
   border-radius: 10px;
   width: 200%;
@@ -74,8 +76,8 @@ body {
 
 }
 
-#post h2{
-  color: #00001a;
+#post h3{
+  color: #aaa6ca;
   padding-top: 10px;
   margin-bottom: -5px;
 }
