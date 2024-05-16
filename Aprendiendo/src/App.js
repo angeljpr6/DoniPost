@@ -4,6 +4,7 @@ import Componente from './components/Componente';
 import SeccionPruebas from './components/SeccionPruebas';
 import Posts from './components/Posts';
 import Header from './components/Header';
+import PostCard from './components/PostCard';
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
 
       <header className="App-header">
 
-        <Header/>
+        <PostCard/>
         
       </header>
     </div>
