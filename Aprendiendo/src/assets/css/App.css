@@ -57,18 +57,21 @@ body {
 
 
 #contenido {
-  display: flex;
+  display:flex;
   padding-top: 6%;
+  width: 540px;
+  margin: auto;
 }
+
 
 #barraLat {
   position: fixed;
-  margin-left: 19.5%;
-  margin-right: 10%;
-  text-align: start;
+  text-align: center;
   background-color: #32314e;
   color: white;
   border-radius: 20px;
+  height: 20%;
+  width: 10%;
   min-height: 200px;
   min-width: 200px;
   margin-top: 100px;
@@ -80,8 +83,7 @@ body {
 
 }
 #post {
-  margin-left: 200%;
-  margin-top: 20px;
+  margin-top: 25px;
   color: white;
   background-color: #32314e;
   border-radius: 10px;
