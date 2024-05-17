@@ -8,7 +8,7 @@ var router=express.Router();
 //rutas
 
  router.get("/getusers",UserController.getUser)
- router.get("/tests",UserController.cosas)
+ router.get("/validate",UserController.validateUser)
 
 
 
