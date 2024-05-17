@@ -8,10 +8,8 @@ var router=express.Router();
 router.get("/test",PostController.cosas)
 
 //rutas
- router.post("/save",PostController.save)
- router.get("/get",PostController.getPosts)
- router.get("/getuserposts/:user",PostController.getPostByUser)
-
-
+router.post("/save",PostController.save)
+router.get("/get",PostController.getPosts)
+router.get("/getuserposts/:user",PostController.getPostByUser)
 
 module.exports=router;

@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 
-import Header from './Header'
+import PostUser from "./PostUser";
+
 class Perfil extends Component{
 
     render(){
-
         return(
+            <div id="contenido">
 
-            <h1>HolaCARAcola</h1>
+                <div id="postsContent">
+                    <PostUser />
+                </div>
+            </div>
         )
-
     }
-
 }
 
 export default Perfil
