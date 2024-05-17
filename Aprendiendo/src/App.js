@@ -6,6 +6,7 @@ import Posts from './components/Posts';
 import Header from './components/Header';
 import PostCard from './components/PostCard';
 import BarraLateral from './components/BarraLateral';
+import Router from  "./Router";
 
 
 function App() {
@@ -18,13 +19,17 @@ function App() {
         <Header />
       </header>
       <BarraLateral />
-      <div id="contenido">
+      <Router/>
+
+      
+
+      {/*<div id="contenido">
         
         <div id="postsContent">
           <PostCard />
         </div>
 
-      </div>
+      </div>*/}
 
     </div>
   );
