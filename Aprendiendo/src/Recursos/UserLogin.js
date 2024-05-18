@@ -10,7 +10,17 @@ export const getUser = () => {
 export const setBiography = (userData) => {
   localStorage.setItem('bio', JSON.stringify(userData));
 };
+
 export const getBiography = () => {
+  const bio = localStorage.getItem('bio');
+  return bio ? JSON.parse(bio) : null;
+};
+
+export const setFollowers = (userData) => {
+  localStorage.setItem('bio', JSON.stringify(userData));
+};
+
+export const getFollowers = () => {
   const bio = localStorage.getItem('bio');
   return bio ? JSON.parse(bio) : null;
 };
