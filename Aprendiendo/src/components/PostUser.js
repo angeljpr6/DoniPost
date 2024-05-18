@@ -26,7 +26,6 @@ class PostUser extends Component{
                     posts: res.data.post,
                     status: "success"
                 });
-                console.log(this.state)
             });
     }
 

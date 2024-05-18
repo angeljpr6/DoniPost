@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { setUser } from '../Recursos/UserLogin';
+import { setBiography } from '../Recursos/UserLogin';
 
 
 const LoginForm = () => {
@@ -30,6 +31,7 @@ const LoginForm = () => {
 
       if (response.status === 200) {
         setUser(result.user.name)
+        setBiography(result.user.biography)
         navigate('/Inicio');
       } else {
         setErrorMessage(result.message);
