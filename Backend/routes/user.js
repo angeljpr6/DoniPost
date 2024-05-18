@@ -8,9 +8,6 @@ var router=express.Router();
 //rutas
 
  router.get("/getusers",UserController.getUser)
- router.get("/validate",UserController.validateUser)
-
-
-
+ router.post("/login",UserController.validateUser)
 
 module.exports=router;
