@@ -19,7 +19,7 @@ class PostCard extends Component {
     getPosts = () => {
         const user=getUser()
         
-        const url=`http://localhost:3900/api/${user}/following`;
+        const url=`http://localhost:3900/api/${user}/followingPosts`;
 
         axios.get(url)
             .then(res => {

@@ -3,7 +3,7 @@ body {
   align-items: center;
   margin: 0px;
   padding: 0px;
-  background-color: #000000;
+  background-color: #00001a;
 
   /*FUENTES*/
   font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -16,14 +16,18 @@ body {
   position: fixed;
   top: 0;
   left: 50%;
-  transform: translateX(-50%); /* Centra el elemento horizontalmente */
-  width: 70%; /* Ancho del elemento */
+  transform: translateX(-50%);
+  /* Centra el elemento horizontalmente */
+  width: 70%;
+  /* Ancho del elemento */
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid #ccc;
-  padding: 10px; /* Añade relleno para separar el contenido */
-  background-color: #00001a; /* Fondo blanco (opcional) */
+  padding: 10px;
+  /* Añade relleno para separar el contenido */
+  background-color: #00001a;
+  /* Fondo blanco (opcional) */
   z-index: 1000;
 }
 
@@ -36,40 +40,46 @@ body {
 #brand {
   color: white;
   font-size: 30px;
-  flex: 1; /* Ocupará el espacio restante */
-  text-align: center; /* Centrar el texto */
+  flex: 1;
+  /* Ocupará el espacio restante */
+  text-align: center;
+  /* Centrar el texto */
 }
 
-#searchBar{
+#searchBar {
   margin-right: -30%;
 }
 
 #searchBar input[type="text"] {
   padding: 8px;
   background-color: #aaa6ca;
-  border-radius:50px;
+  border-radius: 50px;
   border: 1px solid #ccc;
-  width: 200px; /* Ancho de la barra de búsqueda */
-  box-sizing: border-box; /* Incluye el padding y el borde en el ancho */
+  width: 200px;
+  /* Ancho de la barra de búsqueda */
+  box-sizing: border-box;
+  /* Incluye el padding y el borde en el ancho */
   font-size: 14px;
-  outline: none; /* Eliminar el borde de enfoque */
+  outline: none;
+  /* Eliminar el borde de enfoque */
 }
 
 #contenido {
-  display:flex;
+  display: flex;
   width: 540px;
   margin: 0px auto;
 }
 
 @media (max-width: 1430px) {
-  #contenido{
+  #contenido {
     margin: 0 0 0 auto;
     margin-right: 10px;
   }
+
   #barraLat {
     margin-top: 100px;
   }
-  
+
 }
 
 #barraLat {
@@ -94,17 +104,22 @@ body {
   margin-top: 125px;
   margin-bottom: -100px;
   color: white;
-  border-radius: 10px;
+  border-radius: 20px;
   width: 500px;
-  padding: 20px; /* Espacio interior */
+  padding: 20px;
+  /* Espacio interior */
   text-align: left;
   text-indent: 2%;
-  overflow: hidden; /* Oculta el contenido que se desborde */
-  overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
-  background-image: linear-gradient(to bottom , #333179, #32314e); /* Degradado de color */
+  overflow: hidden;
+  /* Oculta el contenido que se desborde */
+  overflow-y: auto;
+  /* Agrega una barra de desplazamiento vertical cuando sea necesario */
+  background-image: linear-gradient(to bottom, #333179, #32314e);
+  /* Degradado de color */
+ 
 }
 
-#post h3{
+#post h3 {
   color: #aaa6ca;
   padding-top: 10px;
   margin-bottom: -5px;
@@ -130,14 +145,14 @@ body {
 }
 
 #infoPerfil {
-  
+
   border-radius: 15px;
   background-color: #32314e;
   padding-bottom: 10px;
   text-align: left;
   text-indent: 8px;
   margin-bottom: -50px;
-  
+
 }
 
 #bioUsuario {
@@ -152,10 +167,12 @@ body {
 }
 
 #login-form {
-  background-image: linear-gradient(to bottom , #333179, #32314e);
+  background-image: linear-gradient(to bottom, #333179, #32314e);
   padding: 40px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(255, 252, 252, 0.1);
+  -webkit-box-shadow: 10px 10px 99px 25px rgba(56, 39, 56, 0.77);
+  -moz-box-shadow: 10px 10px 99px 25px rgba(56, 39, 56, 0.77);
+  box-shadow: 10px 10px 99px 25px rgba(56, 39, 56, 0.77);
   width: 100%;
   max-width: 400px;
   box-sizing: border-box;
@@ -196,7 +213,7 @@ body {
   color: white;
   font-size: 16px;
   cursor: pointer;
-  
+
 }
 
 #login-button:hover {

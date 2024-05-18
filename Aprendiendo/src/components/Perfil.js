@@ -5,14 +5,19 @@ import PostUser from "./PostUser";
 import Header from "./Header";
 import BarraLateral from "./BarraLateral";
 import { getBiography } from "../Recursos/UserLogin";
-import { getFollowing } from "./UserData";
+import { getUserFollowing } from "../Recursos/UserData";
 class Perfil extends Component{
 
     render(){
         const nombreUsuario = getUser()
-        console.log(nombreUsuario)
+        
         const bio = getBiography()
-        const following = getFollowing("daniel")
+        const following = getUserFollowing()
+        
+        
+        
+        
+        
         
         return(
             <div>
@@ -27,7 +32,7 @@ class Perfil extends Component{
                                 <p>{bio}</p>
                             </div>
                             <div id="datosPerfil">
-                                <p><a href="#"><strong>Seguidos</strong> 40 </a><a href="#"><strong>Seguidores</strong> 40</a></p>
+                                <p><a href="#"><strong>Seguidos</strong> {following} </a><a href="#"><strong>Seguidores</strong> 40</a></p>
                             </div>
                         </div>
                         <div id="postsContent">

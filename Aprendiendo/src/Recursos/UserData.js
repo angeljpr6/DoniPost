@@ -1,7 +1,7 @@
 
 export const getFollowing = async (userName) => {
 
-    /*try {
+    try {
         const response = await fetch(`http://localhost:3900/api/${userName}/following`, {
             method: 'GET',
             headers: {
@@ -16,10 +16,21 @@ export const getFollowing = async (userName) => {
         const result = await response.json();
 
         if (response.status === 200) {
-            console.log(result)
+            const num = result.following.length
+            setUserFollowing(num)
+
         } else {
         }
     } catch (error) {
         console.error('Error during login:', error);
-    }*/
+    }
+};
+
+export const setUserFollowing = (userData) => {
+    localStorage.setItem('following', JSON.stringify(userData));
+};
+
+export const getUserFollowing = () => {
+    const following = localStorage.getItem('following');
+    return following ? JSON.parse(following) : null;
 };

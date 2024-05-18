@@ -23,6 +23,23 @@ var controller = {
         }
     },
 
+    getFollowings: async (req, res) => {
+        try {
+            const username = req.params.username; // Nombre de usuario del cual se desea obtener los posts
+
+            // Buscar los nombres de usuario de los usuarios seguidos por el usuario especificado
+            const following = await Follower.find({ follower: username }).select('following');
+
+
+
+            return res.status(200).send({following});
+        } catch (error) {
+            console.error(error);
+            return res.status(500).send({ message: 'Error al obtener los posts de los usuarios seguidos' });
+        }
+    },
+
+
     // Otros métodos del controlador de posts...
 };
 
