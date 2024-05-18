@@ -3,9 +3,11 @@ import meGusta from '../assets/images/me-gusta.png'
 import comentario from '../assets/images/comentario.png'
 import repost from '../assets/images/repost.png'
 import axios from "axios";
+import { getUser } from "../Recursos/UserLogin";
 
 class PostCard extends Component {
 
+    
     state = {
         posts: [],
         status: null
@@ -15,12 +17,17 @@ class PostCard extends Component {
         this.getPosts();
     }
     getPosts = () => {
-        axios.get("http://localhost:3900/api/get")
+        const user=getUser()
+        
+        const url=`http://localhost:3900/api/${user}/following`
+
+        axios.get(url)
             .then(res => {
                 this.setState({
                     posts: res.data.posts,
                     status: "success"
                 });
+                
             });
     }
 

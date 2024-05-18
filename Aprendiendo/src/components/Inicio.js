@@ -1,17 +1,25 @@
 import { Component } from "react";
 
 import PostCard from "./PostCard";
-
+import Header from "./Header";
+import BarraLateral from "./BarraLateral";
 class Inicio extends Component {
 
-    render(){
+    render() {
 
-        return(
-            <div id="contenido">
-                <div id="postsContent">
-                    <PostCard />
+        return (
+            <div>
+                <Header/>
+                <BarraLateral/>
+                <div id="contenido">
+                    
+                    <div id="postsContent">
+                        <PostCard />
+                    </div>
                 </div>
+
             </div>
+
 
         )
 
