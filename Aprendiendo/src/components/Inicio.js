@@ -12,9 +12,8 @@ class Inicio extends Component {
                 <Header/>
                 <BarraLateral/>
                 <div id="contenido">
-                    
                     <div id="postsContent">
-                        <PostCard />
+                        <PostCard/>
                     </div>
                 </div>
 
