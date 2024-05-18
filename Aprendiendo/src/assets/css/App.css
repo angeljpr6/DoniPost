@@ -3,7 +3,7 @@ body {
   align-items: center;
   margin: 0px;
   padding: 0px;
-  background-color: #00001a;
+  background-color: #000000;
 
   /*FUENTES*/
   font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -149,4 +149,62 @@ body {
 #datosPerfil a {
   text-decoration: none;
   color: white;
+}
+
+#login-form {
+  background-image: linear-gradient(to bottom , #333179, #32314e);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 252, 252, 0.1);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 100px;
+}
+
+#login-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+  color: #ffffff;
+}
+
+#login-username,
+#login-password {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+#login-username:focus,
+#login-password:focus {
+  border-color: #9b59b6;
+  outline: none;
+}
+
+#login-button {
+  width: 100%;
+  padding: 10px 15px;
+  background: #9b59b6;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  
+}
+
+#login-button:hover {
+  background: #8e44ad;
+}
+
+#login-error-message {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
 }
