@@ -12,7 +12,7 @@ class Header extends Component {
                 <div className="center">
                     {/* LOGO */}
                     <div id="logo">
-                        <a href="/" className="app-logo-link"> {/* Establece el href a "/" para redirigir al index.html */}
+                        <a href="/Inicio" className="app-logo-link"> {/* Establece el href a "/" para redirigir al index.html */}
                             <img src={logo} className="app-logo" alt="Logotipo" />
                         </a>
                         

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { setUser } from '../Recursos/UserLogin';
+import { setFollowers, setUser } from '../Recursos/UserLogin';
 import { setBiography } from '../Recursos/UserLogin';
 
 
