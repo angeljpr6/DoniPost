@@ -13,7 +13,6 @@ class Perfil extends Component{
         const bio = getBiography()
         
         return(
-
             <div>
                 <Header/>
                 <BarraLateral/>
@@ -21,7 +20,7 @@ class Perfil extends Component{
                     
                     <div id="perfil">
                         <div id="infoPerfil">
-                            <h1>{nombreUsuario}</h1>
+                            <h1>@{getUser()}</h1>
                             <div id="bioUsuario">
                                 <p>{bio}</p>
                             </div>
