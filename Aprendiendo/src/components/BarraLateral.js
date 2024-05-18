@@ -7,9 +7,18 @@ class BarraLateral extends Component {
 
         return (
             <div id="barraLat">
-                <h2>Perfil</h2>
-                <h2>Opciones</h2>
-                <h2>Escribir Post</h2>
+                <a href="/Inicio">
+                    <h2>Inicio</h2>
+                </a>
+                <a href="/Perfil">
+                    <h2>Perfil</h2>
+                </a>
+                <a href="/Perfil">
+                    <h2>Opciones</h2>
+                </a>
+                <a href="/Perfil">
+                    <h2>Escribir Post</h2>
+                </a>
             </div>
         )
     }

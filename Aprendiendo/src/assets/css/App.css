@@ -59,7 +59,18 @@ body {
 #contenido {
   display:flex;
   width: 540px;
-  margin: 100px auto;
+  margin: 0px auto;
+}
+
+@media (max-width: 1430px) {
+  #contenido{
+    margin: 0 0 0 auto;
+    margin-right: 10px;
+  }
+  #barraLat {
+    margin-top: 100px;
+  }
+  
 }
 
 
@@ -67,19 +78,23 @@ body {
   position: fixed;
   text-align: center;
   background-color: #32314e;
-  color: white;
   border-radius: 20px;
-  height: 20%;
+  height: 25%;
   width: 10%;
   min-height: 200px;
   min-width: 200px;
-  margin-top: 25px;
+  margin-top: 125px;
   margin-left: 15%;
-
-
 }
+
+#barraLat a {
+  text-decoration: none;
+  color: white;
+}
+
 #post {
-  margin-top: 25px;
+  margin-top: 125px;
+  margin-bottom: -100px;
   color: white;
   background-color: #32314e;
   border-radius: 10px;
@@ -111,6 +126,3 @@ body {
   padding-right: 60%;
   justify-content: space-between;
 }
-
-
-
