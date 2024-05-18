@@ -55,7 +55,6 @@ body {
   outline: none; /* Eliminar el borde de enfoque */
 }
 
-
 #contenido {
   display:flex;
   width: 540px;
@@ -72,7 +71,6 @@ body {
   }
   
 }
-
 
 #barraLat {
   position: fixed;
@@ -124,4 +122,31 @@ body {
   padding-left: 10%;
   padding-right: 60%;
   justify-content: space-between;
+}
+
+/* Perfil */
+#perfil {
+  margin-top: 100px;
+}
+
+#infoPerfil {
+  
+  border-radius: 15px;
+  background-color: #32314e;
+  padding-bottom: 10px;
+  text-align: left;
+  text-indent: 8px;
+  margin-bottom: -50px;
+  
+}
+
+#bioUsuario {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #aaa6ca;
+}
+
+#datosPerfil a {
+  text-decoration: none;
+  color: white;
 }
