@@ -96,7 +96,6 @@ body {
   margin-top: 125px;
   margin-bottom: -100px;
   color: white;
-  background-color: #32314e;
   border-radius: 10px;
   width: 500px;
   padding: 20px; /* Espacio interior */
@@ -104,7 +103,7 @@ body {
   text-indent: 2%;
   overflow: hidden; /* Oculta el contenido que se desborde */
   overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
-  
+  background-image: linear-gradient(to bottom , #333179, #32314e); /* Degradado de color */
 }
 
 #post h3{
