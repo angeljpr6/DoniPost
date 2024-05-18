@@ -1,10 +1,8 @@
-let user = null;
-
 export const setUser = (userData) => {
-  user = userData;
-  console.log(user)
+  localStorage.setItem('user', JSON.stringify(userData));
 };
 
 export const getUser = () => {
-  return user;
+  const user = localStorage.getItem('user');
+  return user ? JSON.parse(user) : null;
 };

@@ -4,6 +4,7 @@ import meGusta from '../assets/images/me-gusta.png'
 import comentario from '../assets/images/comentario.png'
 import repost from '../assets/images/repost.png'
 import axios from "axios";
+import { getUser } from "../Recursos/UserLogin";
 
 class PostUser extends Component{
 
