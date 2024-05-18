@@ -16,8 +16,11 @@ class PostUser extends Component{
     componentDidMount() {
         this.getPostsByUser();
     }
+
+    
     getPostsByUser = () => {
-        axios.get("http://localhost:3900/api/getuserposts/daniel")
+        const user=getUser();
+        axios.get(`http://localhost:3900/api/getuserposts/${user}`)
             .then(res => {
                 this.setState({
                     posts: res.data.post,
