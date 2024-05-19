@@ -124,6 +124,10 @@ body {
  
 }
 
+#eliminar-post {
+  text-align: right;
+}
+
 #post h3 {
   color: #aaa6ca;
   padding-top: 10px;

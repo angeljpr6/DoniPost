@@ -97,6 +97,18 @@ var controller={
                     });
                 }
             });
+    },
+    
+    deletePost: async (req, res) => {
+        const postId = req.params.postId; // Obtener el ID del post de los parámetros de la URL
+        try {
+            // Eliminar el post por su ID
+            await Post.findByIdAndDelete(postId);
+            res.status(200).json({ message: 'Post eliminado correctamente' });
+        } catch (error) {
+            console.error('Error al eliminar el post:', error);
+            res.status(500).json({ message: 'Error interno del servidor al eliminar el post', error });
+        }
     }
 
 }

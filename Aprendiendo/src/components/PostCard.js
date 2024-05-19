@@ -10,7 +10,7 @@ import { Navigate } from "react-router-dom";
 
 class PostCard extends Component {
 
-    
+
     state = {
         posts: [],
         status: null
@@ -20,9 +20,9 @@ class PostCard extends Component {
         this.getPosts();
     }
     getPosts = () => {
-        const user=getUser()
-        
-        const url=`http://localhost:3900/api/${user}/followingPosts`;
+        const user = getUser()
+
+        const url = `http://localhost:3900/api/${user}/followingPosts`;
 
         axios.get(url)
             .then(res => {
@@ -30,7 +30,7 @@ class PostCard extends Component {
                     posts: res.data.posts,
                     status: "success"
                 });
-                
+
             });
     }
 
@@ -43,35 +43,35 @@ class PostCard extends Component {
         if (this.state.posts.length >= 1) {
 
             var listPosts = this.state.posts.map((post) => {
-            
+
                 return (
-                    
+
                     <div id="post" >
                         <h3>
-                            <a className="usuarios" href= "/Perfil/user" onClick={(e) => {this.handleUserClick(post.user); }}>
+                            <a className="usuarios" href="/Perfil/user" onClick={(e) => { this.handleUserClick(post.user); }}>
                                 @{post.user}
                             </a>
                         </h3>
                         <p>{post.text}</p>
                         <p id="date">{post.date}</p>
-                        <div id = "accionesPost">
+                        <div id="accionesPost">
                             <a href="#" className="dar-me-gusta">
-                                <img src={comentario} alt="iconoMeGusta"></img>
+                                <img src={meGusta} alt="iconoMeGusta"></img>
                             </a>
                             <a href="#" className="dar-repost">
                                 <img src={repost} alt="iconoRePost"></img>
                             </a>
                             <a href="#" className="entrar-comentarios">
-                                <img src={meGusta} alt="iconoComentarios"></img>
+                                <img src={comentario} alt="iconoComentarios"></img>
                             </a>
                         </div>
-                        
+
                     </div>
                 )
             })
             return (
                 <div>{listPosts}</div>
-                
+
             )
         } else if (this.state.posts.length == 10 && this.state.status == "success") {
             return (
@@ -85,10 +85,6 @@ class PostCard extends Component {
                 <h3>Cargando....</h3>
             </div>
         }
-
-
-
-
     }
 }
 

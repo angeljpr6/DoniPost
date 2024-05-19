@@ -6,6 +6,7 @@ class Post extends Component {
 
         return (
             <section id="tweetSection">
+                
                 <div className="tweet">
                     <span className="user">{usuario}</span>
                     <span className="date">{contador}</span>
