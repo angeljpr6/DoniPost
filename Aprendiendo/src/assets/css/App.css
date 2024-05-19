@@ -230,3 +230,40 @@ body {
   text-align: center;
   margin-top: 10px;
 }
+
+/* MODAL */
+
+/* Estilos para el contenido del modal */
+.modal-contenido {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* Estilos para el botón de cierre del modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+  width: 300px; /* Ancho del modal */
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000; /* Asegura que el modal esté encima de otros elementos */
+}
+
+.modal-content {
+  background-color: #fff; /* Fondo del modal */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #aaa;
+  font-size: 20px;
+}
