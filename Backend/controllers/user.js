@@ -93,8 +93,19 @@ var controller = {
             console.error('Error al buscar usuarios:', error);
             res.status(500).json({ message: 'Error interno del servidor' });
         }
+    },
+    getUserBio: async (req, res) => {
+        try {
+            const username = req.params.username;
+            const user = await User.findOne({ name: username });
+            if (!user) {
+                return res.status(404).send({ message: 'Usuario no encontrado' });
+            }
+            res.status(200).send({ biography: user.biography });
+        } catch (error) {
+            res.status(500).send({ message: 'Error al obtener la biografía del usuario' });
+        }
     }
-
 
 }
 
