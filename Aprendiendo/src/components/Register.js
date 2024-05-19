@@ -4,9 +4,11 @@ import { setFollowers, setUser } from '../Recursos/UserLogin';
 import { setBiography } from '../Recursos/UserLogin';
 
 
-const LoginForm = () => {
+const Register = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [bio, setBio] = useState('');
+    
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
@@ -50,7 +52,7 @@ const LoginForm = () => {
                         <strong>Doni</strong>Post
                     </span>
                 </div>
-                <h2 id="login-title">Iniciar sesión</h2>
+                <h2 id="login-title">Registrarse</h2>
                 <input id="login-username"
                     type="text"
                     placeholder="Nombre de usuario"
@@ -65,13 +67,19 @@ const LoginForm = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 />
-                
-                <button id="login-button" type="submit">Ingresar</button>
-                <a className='registrarse' href='/Register'>Registrarse</a>
+
+                <input id="login-password"
+                    type="text"
+                    placeholder="Biografía"
+                    value={bio}
+                    onChange={(e) => setBio(e.target.value)}
+                    required
+                />
+                <button id="login-button" type="submit">Registrarse</button>
                 {errorMessage && <p id="login-error-message">{errorMessage}</p>}
             </form>
         </div>
     );
 };
 
-export default LoginForm;
+export default Register;
