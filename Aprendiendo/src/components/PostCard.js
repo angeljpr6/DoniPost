@@ -48,7 +48,7 @@ class PostCard extends Component {
                     
                     <div id="post" >
                         <h3>
-                            <a href= "/Perfil/user" onClick={(e) => {this.handleUserClick(post.user); }}>
+                            <a className="usuarios" href= "/Perfil/user" onClick={(e) => {this.handleUserClick(post.user); }}>
                                 @{post.user}
                             </a>
                         </h3>
