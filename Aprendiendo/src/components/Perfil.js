@@ -40,6 +40,8 @@ class Perfil extends Component{
           loading: false,
         });
       }
+
+      
     
       render() {
         const { nombreUsuario, bio, following,followers, loading } = this.state;

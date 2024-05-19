@@ -8,5 +8,9 @@ const FollowerController = require('../controllers/follower');
 router.get('/:username/followingPosts', FollowerController.getPostsByFollowingUser);
 router.get('/:username/following',FollowerController.getFollowings);
 router.get('/:username/followers',FollowerController.getFollowers);
+router.post("/follow",FollowerController.seguir);
+router.post("/unfollow",FollowerController.dejarDeSeguir)
+router.get("/allFollowers",FollowerController.getAllFollowers)
+
 
 module.exports = router;
