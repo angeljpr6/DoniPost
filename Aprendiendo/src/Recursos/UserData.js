@@ -45,7 +45,6 @@ export const getFollowergNumUserData = async (userName) => {
 
         if (response.status === 200) {
             const num = result.followers.length
-            console.log(result)
             setUserDataFollower(num)
 
         } else {
