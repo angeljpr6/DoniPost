@@ -6,14 +6,40 @@ import Header from "./Header";
 import BarraLateral from "./BarraLateral";
 import { getBiography } from "../Recursos/UserLogin";
 import { getUserFollowing } from "../Recursos/UserData";
+import { getFollowing } from "../Recursos/UserData";
 class Perfil extends Component{
 
-    render(){
-        const nombreUsuario = getUser()
+    constructor(props) {
+        super(props);
+        this.state = {
+          nombreUsuario: null,
+          bio: null,
+          following: null,
+          loading: true, // Para manejar la carga de datos
+        };
+      }
+    
+      async componentDidMount() {
+        const nombreUsuario = getUser();
+       
+        const bio = getBiography();
+    
+        // Asumiendo que getFollowing devuelve una promesa
+        await getFollowing(nombreUsuario);
+        const following=getUserFollowing();
         
-        const bio = getBiography()
-        const following = getUserFollowing()
         
+    
+        this.setState({
+          nombreUsuario:nombreUsuario,
+          bio:bio,
+          following:following,
+          loading: false,
+        });
+      }
+    
+      render() {
+        const { nombreUsuario, bio, following, loading } = this.state;
         
         
         

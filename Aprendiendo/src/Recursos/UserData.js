@@ -17,6 +17,7 @@ export const getFollowing = async (userName) => {
 
         if (response.status === 200) {
             const num = result.following.length
+            console.log(num)
             setUserFollowing(num)
 
         } else {

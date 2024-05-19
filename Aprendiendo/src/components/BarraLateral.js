@@ -2,7 +2,7 @@ const { Component } = require("react");
 
 
 class BarraLateral extends Component {
-
+    
     render() {
 
         return (
@@ -10,7 +10,7 @@ class BarraLateral extends Component {
                 <a href="/Inicio">
                     <h2>Inicio</h2>
                 </a>
-                <a href="/Perfil">
+                <a href="/Perfil" >
                     <h2>Perfil</h2>
                 </a>
                 <a href="/Perfil">
