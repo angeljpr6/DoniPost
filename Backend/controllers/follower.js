@@ -40,7 +40,7 @@ var controller = {
     },
 
 
-    // Otros métodos del controlador de posts...
+
 };
 
 module.exports = controller;

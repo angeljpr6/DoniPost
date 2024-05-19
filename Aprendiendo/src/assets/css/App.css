@@ -150,27 +150,69 @@ body {
 }
 
 #infoPerfil {
-
   border-radius: 15px;
-  background-color: #32314e;
-  padding-bottom: 10px;
-  text-align: left;
-  text-indent: 8px;
-  margin-bottom: -50px;
+  background: linear-gradient(135deg, #494880, #32314e);
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
+#infoPerfil:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 #bioUsuario {
   margin-left: 10px;
   margin-right: 10px;
   color: #aaa6ca;
+  text-align: center;
 }
 
 #datosPerfil a {
   text-decoration: none;
   color: white;
+  transition: color 0.3s;
+  
+}
+#datosPerfil p {
+  text-align: center;
+  
+}
+#datosPerfil a {
+  color: #d6d6d6;
 }
 
+#datosPerfil a:hover {
+  color: #ecf0ef;
+}
+
+#contenedorNombreYSeguirUsuario {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#botonSeguirUsuario {
+  font-size: medium;
+  color: white;
+  background-color: #8e44ad;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#botonSeguirUsuario:hover {
+  background-color: #9b59b6;
+  transform: scale(1.05);
+}
+
+/*Login*/
 #login-form {
   background-image: linear-gradient(to bottom, #333179, #32314e);
   padding: 40px;
@@ -232,26 +274,6 @@ body {
   color: red;
   text-align: center;
   margin-top: 10px;
-}
-
-#contenedorNombreYSeguirUsuario {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#botonSeguirUsuario {
-  font-size: medium;
-  color: white;
-  align-items: end;
-  background-color: #8e44ad;
-  border: none;
-  border-radius: 15px;
-  margin-right: 10px;
-  height: 35px;
-  width: 85px;
-  cursor: pointer;
-  
 }
 
 /* MODAL */
