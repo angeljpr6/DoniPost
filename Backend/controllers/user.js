@@ -105,7 +105,47 @@ var controller = {
         } catch (error) {
             res.status(500).send({ message: 'Error al obtener la biografía del usuario' });
         }
-    }
+    },
+    register: async (req, res) => {
+        // Obtener parámetros
+        var params = req.body;
+    
+        try {
+            // Validar datos
+            var validate_user = !validator.isEmpty(params.user);
+            var validate_pass = !validator.isEmpty(params.password);
+    
+            if (!validate_user || !validate_pass) {
+                return res.status(404).send({
+                    message: "Faltan datos"
+                });
+            }
+    
+            // Crear objeto
+            var user = new User({
+                name: params.user,
+                password: params.password,
+                biography: params.bio
+            });
+    
+            // Guardar en la base de datos
+            const userStored = await user.save();
+    
+            if (!userStored) {
+                throw new Error('El post no se guardó correctamente.');
+            }
+    
+            return res.status(200).send({
+                user: userStored
+            });
+        } catch (err) {
+            console.error(err);
+            return res.status(500).send({
+                message: 'Error al guardar el post en la base de datos.'
+            });
+        }
+    },
+
 
 }
 

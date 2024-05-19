@@ -13,6 +13,7 @@ router.post("/changepassword", UserController.changePassword); // Nueva ruta par
 router.post("/validatepassword", UserController.validatePassword); // Ruta para validar la contraseña actual
 router.get('/searchusers/:text', UserController.searchUsers); // Nueva ruta para buscar usuarios por texto
 router.get('/getuserbio/:username', UserController.getUserBio);
+router.post('/register', UserController.register)
 
 
 

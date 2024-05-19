@@ -17,12 +17,12 @@ const Register = () => {
         event.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:3900/api/login', {
+            const response = await fetch('http://localhost:3900/api/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ name: username, password })
+                body: JSON.stringify({ user: username, password, bio })
             });
 
             if (!response.ok) {
@@ -32,15 +32,16 @@ const Register = () => {
             const result = await response.json();
 
             if (response.status === 200) {
-                setUser(result.user.name)
-                setBiography(result.user.biography)
+                // Asumiendo que result.user tiene las propiedades name y biography
+                setUser(result.user.name);
+                setBiography(result.user.biography);
                 navigate('/Inicio');
             } else {
                 setErrorMessage(result.message);
             }
         } catch (error) {
-            console.error('Error during login:', error);
-            setErrorMessage('Usuario o contraseña incorrectos');
+            console.error('Error during registration:', error);
+            setErrorMessage('Error en el registro. Inténtalo de nuevo.');
         }
     };
 
