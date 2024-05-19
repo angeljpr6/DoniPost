@@ -37,7 +37,7 @@ class PostUser extends Component{
             
                 return (
                     
-                    <div id="post">
+                    <div id="post" key={post._id}>
                         <h3>@{post.user}</h3>
                         <p>{post.text}</p>
                         <p id="date">{post.date}</p>
