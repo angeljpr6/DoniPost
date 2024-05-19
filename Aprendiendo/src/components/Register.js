@@ -32,7 +32,6 @@ const Register = () => {
             const result = await response.json();
 
             if (response.status === 200) {
-                // Asumiendo que result.user tiene las propiedades name y biography
                 setUser(result.user.name);
                 setBiography(result.user.biography);
                 navigate('/Inicio');

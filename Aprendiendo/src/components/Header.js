@@ -31,14 +31,14 @@ class Header extends Component {
                 <div className="center">
                     {/* LOGO */}
                     <div id="logo">
-                        <a href="/Inicio" className="app-logo-link"> {/* Establece el href a "/Inicio" para redirigir a la página de inicio */}
+                        <a href="/Inicio" className="app-logo-link">
                             <img src={logo} className="app-logo" alt="Logotipo" />
                         </a>
                     </div>
-                    <div>
-                        <span id="brand">
-                            <strong>Doni</strong>Post
-                        </span>
+
+                    {/* BRAND */}
+                    <div id="brand">
+                        <strong>Doni</strong>Post
                     </div>
 
                     {/* BARRA DE BUSQUEDA */}
@@ -48,16 +48,10 @@ class Header extends Component {
                                 type="text"
                                 placeholder="Buscar..."
                                 ref={this.searchRef}
-                                onKeyPress={this.handleKeyPress} // Nuevo evento para manejar la tecla "Enter"
+                                onKeyPress={this.handleKeyPress}
                             />
                         </form>
                     </div>
-
-                    {/* LIMPIAR FLOTADOS */}
-                    <div className="clearfix"></div>
-
-                    {/* LIMPIAR FLOTADOS */}
-                    <div className="clearfix"></div>
                 </div>
             </header>
         );

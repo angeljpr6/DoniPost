@@ -12,42 +12,27 @@ body {
   -moz-osx-font-smoothing: antialiased;
 }
 
-.center {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  /* Centra el elemento horizontalmente */
-  width: 70%;
-  /* Ancho del elemento */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 2px solid #ccc;
-  padding: 10px;
-  /* Añade relleno para separar el contenido */
-  background-color: #00001a;
-  /* Fondo blanco (opcional) */
-  z-index: 1000;
-}
+
+
+
 
 #logo img {
   height: 60px;
-  flex: 0 0 auto;
+  
 
 }
 
 #brand {
   color: white;
   font-size: 30px;
-  flex: 1;
+  
   /* Ocupará el espacio restante */
   text-align: center;
   /* Centrar el texto */
 }
 
 #searchBar {
-  margin-right: -30%;
+  
 }
 
 #searchBar input[type="text"] {
@@ -62,6 +47,25 @@ body {
   font-size: 14px;
   outline: none;
   /* Eliminar el borde de enfoque */
+}
+
+.center {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Centra el elemento horizontalmente */
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ccc;
+  padding: 10px;
+  /* Añade relleno para separar el contenido */
+  background-color: #00001a;
+  /* Fondo blanco (opcional) */
+  z-index: 1000;
+ 
 }
 
 #contenido {
