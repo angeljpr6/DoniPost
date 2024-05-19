@@ -234,6 +234,26 @@ body {
   margin-top: 10px;
 }
 
+#contenedorNombreYSeguirUsuario {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#botonSeguirUsuario {
+  font-size: medium;
+  color: white;
+  align-items: end;
+  background-color: #8e44ad;
+  border: none;
+  border-radius: 15px;
+  margin-right: 10px;
+  height: 35px;
+  width: 85px;
+  cursor: pointer;
+  
+}
+
 /* MODAL */
 
 /* Estilos para el contenido del modal */

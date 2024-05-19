@@ -48,7 +48,11 @@ class PerfilUsers extends Component{
                     
                     <div id="perfil">
                         <div id="infoPerfil">
-                            <h1>@{nombreUsuario}</h1>
+                            <div id="contenedorNombreYSeguirUsuario">
+                                <h1>@{nombreUsuario}</h1>
+                                <button id="botonSeguirUsuario"><strong>Seguir</strong></button>
+                            </div>
+                            
                             <div id="bioUsuario">
                                 <p>hdhddh</p>
                             </div>
