@@ -1,27 +1,49 @@
 import React, { Component } from "react";
+import axios from "axios"; // Asegúrate de tener axios instalado: npm install axios
+
+import { getUser } from "../Recursos/UserLogin";
 
 class EscribirPost extends Component {
-    
     constructor(props) {
         super(props);
         this.state = {
             showModal: false,
-            contenidoDelPost: ""
+            contenidoDelPost: "",
+            mensajeError: ""
         };
     }
 
-    handleEscribirPostClick = () => {
+    handleEscribirPostClick = (event) => {
+        event.preventDefault();
         this.setState({ showModal: true });
     }
 
     handleCloseModal = () => {
-        this.setState({ showModal: false });
+        this.setState({ showModal: false, contenidoDelPost: "", mensajeError: "" });
     }
 
     handleChange = (event) => {
         const inputValue = event.target.value;
         if (inputValue.length <= 500) { // Limitar a 500 caracteres en total
             this.setState({ contenidoDelPost: inputValue });
+        }
+    }
+
+    handlePublicarPost = async () => {
+        const { contenidoDelPost } = this.state;
+        const post = {
+            user: getUser(),
+            text: contenidoDelPost,
+            date: new Date()
+        };
+
+        try {
+            const response = await axios.post("http://localhost:3900/api/save", post);
+            console.log("Post creado:", response.data);
+            this.handleCloseModal(); // Cerrar el modal después de publicar el post
+        } catch (error) {
+            console.error("Error al crear el post:", error);
+            this.setState({ mensajeError: "Error al crear el post. Inténtalo de nuevo." });
         }
     }
 
@@ -47,11 +69,13 @@ class EscribirPost extends Component {
                                         rows="5" // Muestra 5 filas inicialmente
                                         cols="50" // 50 caracteres por línea (aproximadamente)
                                         style={{ resize: "none" }} // Deshabilita el redimensionamiento
-
                                     />
                                     <p id="contadorCaracteres">{this.state.contenidoDelPost.length}/500</p>
                                 </form>
-                                <button id="botonPublicarPost"><strong>Publicar</strong></button>
+                                <div id="publicarPost">
+                                    <button id="botonPublicarPost" onClick={this.handlePublicarPost}><strong>Publicar</strong></button>
+                                    {this.state.mensajeError && <p className="error">{this.state.mensajeError}</p>}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -62,4 +86,5 @@ class EscribirPost extends Component {
 }
 
 export default EscribirPost;
+
 

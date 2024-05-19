@@ -371,3 +371,12 @@ body {
   background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
   z-index: 999; /* Coloca la capa por debajo del modal pero por encima del resto de los elementos */
 }
+
+#publicarPost {
+  display: flex;
+  justify-content: space-between;
+}
+
+.error{
+  color: red;
+}
