@@ -52,6 +52,7 @@ var controller={
 
     getPosts: (req, res) => {
         Post.find({})
+            .sort({ date: -1 }) // Ordenar por fecha en orden descendente
             .exec()
             .then(posts => {
                 if (!posts || posts.length === 0) {
@@ -70,30 +71,32 @@ var controller={
                 });
             });
     },
-
-    getPostByUser:(req,res)=> {
-        var postUser=req.params.user
-        if(!postUser|| postUser==null){
+    getPostByUser: (req, res) => {
+        const postUser = req.params.user;
+    
+        if (!postUser || postUser == null) {
             return res.status(404).send({
-                message: "datos vacios"
+                message: "Datos vacíos"
             });
         }
-        Post.findByUser(postUser, (err,post)=>{
-            if(err){
-                return res.status(500).send({
-                    message: "error"
-                });
-            } else if(!post){
-                return res.status(404).send({
-                    message: "No hay posts"
-                });
-            }else{
-                return res.status(200).send({
-                    post
-                });
-            }
-
-        })
+    
+        Post.findByUser(postUser)
+            .sort({ date: -1 }) // Ordenar por fecha en orden descendente
+            .exec((err, post) => {
+                if (err) {
+                    return res.status(500).send({
+                        message: "Error"
+                    });
+                } else if (!post) {
+                    return res.status(404).send({
+                        message: "No hay posts"
+                    });
+                } else {
+                    return res.status(200).send({
+                        post
+                    });
+                }
+            });
     }
 
 }
