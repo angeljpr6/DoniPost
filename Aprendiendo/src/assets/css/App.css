@@ -384,7 +384,7 @@ body {
 /* OPCIONES DEL PERFIL */
 #opcionesContent {
   position: fixed;
-  top: 50%;
+  top: 33%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #333179;
