@@ -439,3 +439,36 @@ body {
   background-color: #c0392b;
 }
 
+/* PERFILES BUSCADOS */
+.search-results-container {
+  position: fixed;
+  top: 122px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333179;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  width: 500px;
+  text-align: left;
+  text-indent: 2%;
+  overflow: hidden;
+  overflow-y: auto;
+  background-image: linear-gradient(to bottom, #333179, #32314e);
+}
+
+.user-list {
+  list-style: none;
+  padding: 0;
+}
+
+.user {
+  margin-bottom: 10px;
+}
+
+.user a {
+  text-decoration: none;
+  color: white;
+}
+
+

@@ -86,5 +86,3 @@ class EscribirPost extends Component {
 }
 
 export default EscribirPost;
-
-
