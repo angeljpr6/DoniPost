@@ -44,7 +44,7 @@ const SearchResults = () => {
                             // Filtrar para ignorar el usuario actual
                             user.name !== currentUser && (
                                 <li key={user._id} className="user">
-                                    <a href="/Perfil/user" onClick={(e) => { handleUserClick(user); }}>{user.name}</a>
+                                    <a href="/Perfil/user" onClick={(e) => { handleUserClick(user.name); }}>{user.name}</a>
                                 </li>
                             )
                         ))}
