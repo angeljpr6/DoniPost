@@ -28,10 +28,10 @@ export const getFollowing = async (userName) => {
 };
 
 export const setUserFollowing = (userData) => {
-    localStorage.setItem('following', JSON.stringify(userData));
+    localStorage.setItem('UserFollowing', JSON.stringify(userData));
 };
 
 export const getUserFollowing = () => {
-    const following = localStorage.getItem('following');
-    return following ? JSON.parse(following) : null;
+    const UserFollowing = localStorage.getItem('UserFollowing');
+    return UserFollowing ? JSON.parse(UserFollowing) : null;
 };

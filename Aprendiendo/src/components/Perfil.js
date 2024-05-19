@@ -5,8 +5,8 @@ import PostUser from "./PostUser";
 import Header from "./Header";
 import BarraLateral from "./BarraLateral";
 import { getBiography } from "../Recursos/UserLogin";
-import { getUserFollowing } from "../Recursos/UserData";
-import { getFollowing } from "../Recursos/UserData";
+import { getUserFollowing } from "../Recursos/UserLogin";
+import { getFollowing } from "../Recursos/UserLogin";
 class Perfil extends Component{
 
     constructor(props) {
