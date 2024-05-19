@@ -254,33 +254,51 @@ body {
   
 }
 
-/* MODAL */
-
-/* Estilos para el contenido del modal */
-.modal-contenido {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
+/* MODAL ESCRIBIR POST */
 
 /* Estilos para el botón de cierre del modal */
 .modal {
   position: fixed;
+  text-align: left;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
-  width: 300px; /* Ancho del modal */
+  background-color: #333179; /* Fondo oscuro semi-transparente */
+  width: 600px; /* Ancho del modal */
+  height: 370px;
   padding: 20px;
   border-radius: 10px;
   z-index: 1000; /* Asegura que el modal esté encima de otros elementos */
 }
 
-.modal-content {
-  background-color: #fff; /* Fondo del modal */
+#botonPublicarPost {
+  font-size: medium;
+  color: white;
+  align-items: end;
+  background-color: #8e44ad;
+  border: none;
+  border-radius: 15px;
+  margin-right: 10px;
+  height: 35px;
+  width: 85px;
+  cursor: pointer;
 }
+
+#contadorCaracteres {
+  text-align: right;
+}
+
+#contenidoDelPost {
+  width: 100%; /* Utiliza el ancho completo del contenedor */
+  height: 200px; /* Establece la altura automáticamente según el contenido */
+  box-sizing: border-box; /* Incluye el relleno y el borde en el ancho y alto */
+  padding: 10px; /* Agrega un relleno alrededor del textarea */
+  font-size: 16px; /* Tamaño de fuente */
+  border: 1px solid #ccc; /* Agrega un borde */
+  border-radius: 5px; /* Agrega bordes redondeados */
+  resize: none; /* Deshabilita el redimensionamiento */
+}
+
 
 .close {
   position: absolute;
