@@ -11,7 +11,7 @@ class BarraLateral extends Component {
                 <a href="/Perfil">
                     <h2>Perfil</h2>
                 </a>
-                <a href="/Perfil">
+                <a href="/Opciones">
                     <h2>Opciones</h2>
                 </a>
                 <EscribirPost />
