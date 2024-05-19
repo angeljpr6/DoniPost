@@ -4,9 +4,10 @@ import React, { Component } from "react";
 import Header from "./Header";
 import BarraLateral from "./BarraLateral";
 import PostUserData from "./PostUserData";
-import { getUserData } from "../Recursos/UserData";
+import { getFollowergNumUserData, getUserData, getUserDataFollower } from "../Recursos/UserData";
 import { getFollowingNumUserData } from "../Recursos/UserData";
 import { getUserDataFollowing } from "../Recursos/UserData";
+
 
 class PerfilUsers extends Component{
 
@@ -16,6 +17,7 @@ class PerfilUsers extends Component{
           nombreUsuario: null,
           bio: null,
           following: null,
+          followers:null,
           loading: true, // Para manejar la carga de datos
         };
       }
@@ -24,21 +26,24 @@ class PerfilUsers extends Component{
         const nombreUsuario = getUserData();
        
      
-    
+        await getFollowergNumUserData(nombreUsuario);
         await getFollowingNumUserData(nombreUsuario);
         const following=getUserDataFollowing();
+        const followers=getUserDataFollower();
+        console.log("followers"+followers)
         
         
     
         this.setState({
           nombreUsuario:nombreUsuario,
           following:following,
+          followers:followers,
           loading: false,
         });
       }
     
       render() {
-        const { nombreUsuario, bio, following, loading } = this.state;
+        const { nombreUsuario, bio, following, followers, loading } = this.state;
    
         return(
             <div>
@@ -57,7 +62,7 @@ class PerfilUsers extends Component{
                                 <p>hdhddh</p>
                             </div>
                             <div id="datosPerfil">
-                                <p><a href="#"><strong>Seguidos</strong> {following} </a><a href="#"><strong>Seguidores</strong> 40</a></p>
+                                <p><a href="#"><strong>Seguidos</strong> {following} </a><a href="#"><strong>| Seguidores</strong> {followers} </a></p>
                             </div>
                         </div>
                         <div id="postsContent">

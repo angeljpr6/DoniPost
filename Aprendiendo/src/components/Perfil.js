@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { getUser } from "../Recursos/UserLogin";
+import { getFollowerNum, getUser, getUserFollower } from "../Recursos/UserLogin";
 import PostUser from "./PostUser";
 import Header from "./Header";
 import BarraLateral from "./BarraLateral";
@@ -15,6 +15,7 @@ class Perfil extends Component{
           nombreUsuario: null,
           bio: null,
           following: null,
+          followers:null,
           loading: true, // Para manejar la carga de datos
         };
       }
@@ -24,9 +25,10 @@ class Perfil extends Component{
        
         const bio = getBiography();
     
-        // Asumiendo que getFollowing devuelve una promesa
+        await getFollowerNum(nombreUsuario)
         await getFollowing(nombreUsuario);
         const following=getUserFollowing();
+        const followers=getUserFollower()
         
         
     
@@ -34,12 +36,13 @@ class Perfil extends Component{
           nombreUsuario:nombreUsuario,
           bio:bio,
           following:following,
+          followers:followers,
           loading: false,
         });
       }
     
       render() {
-        const { nombreUsuario, bio, following, loading } = this.state;
+        const { nombreUsuario, bio, following,followers, loading } = this.state;
    
         return(
             <div>
@@ -54,7 +57,7 @@ class Perfil extends Component{
                                 <p>{bio}</p>
                             </div>
                             <div id="datosPerfil">
-                                <p><a href="#"><strong>Seguidos</strong> {following} </a><a href="#"><strong>Seguidores</strong> 40</a></p>
+                                <p><a href="#"><strong>Seguidos</strong> {following} </a><a href="#"><strong>| Seguidores</strong> {followers}</a></p>
                             </div>
                         </div>
                         <div id="postsContent">
