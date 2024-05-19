@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 
-import { getUser } from "../Recursos/UserLogin";
-import PostUser from "./PostUser";
+
 import Header from "./Header";
 import BarraLateral from "./BarraLateral";
-import { getBiography } from "../Recursos/UserLogin";
-import { getUserFollowing } from "../Recursos/UserLogin";
-import { getFollowing } from "../Recursos/UserLogin";
-class Perfil extends Component{
+import PostUserData from "./PostUserData";
+import { getUserData } from "../Recursos/UserData";
+import { getFollowingNumUserData } from "../Recursos/UserData";
+import { getUserDataFollowing } from "../Recursos/UserData";
+
+class PerfilUsers extends Component{
 
     constructor(props) {
         super(props);
@@ -20,19 +21,17 @@ class Perfil extends Component{
       }
     
       async componentDidMount() {
-        const nombreUsuario = getUser();
+        const nombreUsuario = getUserData();
        
-        const bio = getBiography();
+     
     
-        // Asumiendo que getFollowing devuelve una promesa
-        await getFollowing(nombreUsuario);
-        const following=getUserFollowing();
+        await getFollowingNumUserData(nombreUsuario);
+        const following=getUserDataFollowing();
         
         
     
         this.setState({
           nombreUsuario:nombreUsuario,
-          bio:bio,
           following:following,
           loading: false,
         });
@@ -51,14 +50,14 @@ class Perfil extends Component{
                         <div id="infoPerfil">
                             <h1>@{nombreUsuario}</h1>
                             <div id="bioUsuario">
-                                <p>{bio}</p>
+                                <p>hdhddh</p>
                             </div>
                             <div id="datosPerfil">
                                 <p><a href="#"><strong>Seguidos</strong> {following} </a><a href="#"><strong>Seguidores</strong> 40</a></p>
                             </div>
                         </div>
                         <div id="postsContent">
-                            <PostUser />
+                            <PostUserData />
                         </div>
                     </div>
                 </div>
@@ -67,4 +66,4 @@ class Perfil extends Component{
     }
 }
 
-export default Perfil
+export default PerfilUsers

@@ -1,57 +1,45 @@
 import React, { Component } from "react";
+
 import meGusta from '../assets/images/me-gusta.png'
 import comentario from '../assets/images/comentario.png'
 import repost from '../assets/images/repost.png'
 import axios from "axios";
-import { getUser } from "../Recursos/UserLogin";
-import { setUserData } from "../Recursos/UserData";
 import { getUserData } from "../Recursos/UserData";
-import { Navigate } from "react-router-dom";
 
-class PostCard extends Component {
 
-    
+class PostUserData extends Component{
+
     state = {
         posts: [],
         status: null
     };
 
     componentDidMount() {
-        this.getPosts();
+        this.getPostsByUser();
     }
-    getPosts = () => {
-        const user=getUser()
-        
-        const url=`http://localhost:3900/api/${user}/followingPosts`;
 
-        axios.get(url)
+    
+    getPostsByUser = () => {
+        const user=getUserData();
+        axios.get(`http://localhost:3900/api/getuserposts/${user}`)
             .then(res => {
                 this.setState({
-                    posts: res.data.posts,
+                    posts: res.data.post,
                     status: "success"
                 });
-                
             });
     }
 
-    handleUserClick = (user) => {
-        setUserData(user);
-        console.log(getUserData())
-    }
+    render(){
 
-    render() {
         if (this.state.posts.length >= 1) {
 
             var listPosts = this.state.posts.map((post) => {
             
                 return (
                     
-                    <div id="post" >
-                        <h3>
-                            <a href= "/Perfil/user" onClick={(e) => {this.handleUserClick(post.user); }}>
-                                @{post.user}
-                            </a>
-                        </h3>
+                    <div id="post" key={post._id}>
+                        <h3>@{post.user}</h3>
                         <p>{post.text}</p>
                         <p id="date">{post.date}</p>
                         <div id = "accionesPost">
@@ -86,10 +74,8 @@ class PostCard extends Component {
             </div>
         }
 
-
-
-
     }
+
 }
 
-export default PostCard
+export default PostUserData
