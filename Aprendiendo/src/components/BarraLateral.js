@@ -32,11 +32,14 @@ class BarraLateral extends Component {
                     <h2>Escribir Post</h2>
                 </a>
                 {this.state.showModal && (
-                    <div className="modal">
-                        <div className="modal-content">
-                            <span className="close" onClick={this.handleCloseModal}>&times;</span>
-                            <h1>Modal</h1>
-                            {/* Aquí puedes añadir más contenido al modal si lo necesitas */}
+                    <div>
+                        <div className="modal-backdrop"></div> {/* Capa de fondo oscuro */}
+                        <div className="modal">
+                            <div className="modal-content">
+                                <span className="close" onClick={this.handleCloseModal}>&times;</span>
+                                <h1>Modal</h1>
+                                {/* Aquí puedes añadir más contenido al modal si lo necesitas */}
+                            </div>
                         </div>
                     </div>
                 )}
@@ -46,3 +49,4 @@ class BarraLateral extends Component {
 }
 
 export default BarraLateral;
+
