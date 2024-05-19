@@ -4,10 +4,9 @@ import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Perfil from "./components/Perfil";
 import Inicio from "./components/Inicio";
 import LoginForm from "./components/LoginForm";
-
+import SearchResults from "./components/SearchResults"; // Importa el componente de resultados de búsqueda
 
 class Router extends Component {
-
     render() {
         return (
             <BrowserRouter>
@@ -17,6 +16,7 @@ class Router extends Component {
                     <Route path="/login" element={<LoginForm />} />
                     <Route path="/Inicio" element={<Inicio />} />
                     <Route path="/Perfil" element={<Perfil />} />
+                    <Route path="/perfiles/busqueda/:search" element={<SearchResults />} /> {/* Ruta corregida */}
                 </Routes>
             </BrowserRouter>
         );
@@ -24,4 +24,5 @@ class Router extends Component {
 }
 
 export default Router;
+
 

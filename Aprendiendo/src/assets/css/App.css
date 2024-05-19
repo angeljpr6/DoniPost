@@ -100,6 +100,11 @@ body {
   color: white;
 }
 
+#resultadoBusqueda {
+  margin-top: 100px;
+  color: white;
+}
+
 #post {
   margin-top: 125px;
   margin-bottom: -100px;
