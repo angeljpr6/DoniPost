@@ -124,28 +124,28 @@ body {
   border-radius: 20px;
   width: 500px;
   padding: 20px;
-  /* Espacio interior */
   text-align: left;
   text-indent: 2%;
   overflow: hidden;
-  /* Oculta el contenido que se desborde */
   overflow-y: auto;
-  /* Agrega una barra de desplazamiento vertical cuando sea necesario */
   background-image: linear-gradient(to bottom, #333179, #32314e);
-  /* Degradado de color */
- 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 998;
 }
 
-#eliminar-post {
-  text-align: right;
+/* Efecto hover para el contenedor del post */
+#post:hover {
+  transform: scale(1.03);
 }
 
+/* Estilo para el encabezado del post */
 #post h3 {
   color: #aaa6ca;
   padding-top: 10px;
   margin-bottom: -5px;
 }
 
+/* Estilo para la fecha del post */
 #date {
   color: #aaa6ca;
   padding-bottom: 10px;
@@ -153,6 +153,19 @@ body {
   padding-right: 2%;
 }
 
+/* Estilo para los enlaces de usuario */
+.usuarios {
+  text-decoration: none;
+  color: #5a59a1;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.usuarios:hover {
+  color: #eaa7ff;
+  transform: scale(1.1);
+}
+
+/* Estilo para las acciones del post */
 #accionesPost {
   display: flex;
   padding-left: 10%;
@@ -160,6 +173,15 @@ body {
   justify-content: space-between;
 }
 
+#accionesPost a {
+  text-decoration: none;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#accionesPost a:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
 /* Perfil */
 #perfil {
   margin-top: 100px;
