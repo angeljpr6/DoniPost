@@ -35,6 +35,7 @@ class EscribirPost extends Component {
             const response = await axios.post("http://localhost:3900/api/save", post);
             console.log("Post creado:", response.data);
             this.handleCloseModal();
+            window.location.reload();
         } catch (error) {
             console.error("Error al crear el post:", error);
             this.setState({ mensajeError: "Error al crear el post. Inténtalo de nuevo." });
@@ -49,7 +50,7 @@ class EscribirPost extends Component {
                     
                     <div className="modal">
                         <div className="modal-content">
-                            <span className="close" onClick={this.handleCloseModal}>&times;</span>
+                           
                             <h1>Escribe aquí</h1>
                             <form>
                                 <textarea
