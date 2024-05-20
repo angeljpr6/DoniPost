@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios"; // Asegúrate de tener axios instalado: npm install axios
+import { Navigate } from "react-router-dom"; // Importa Navigate
+
 
 import { getUser } from "../Recursos/UserLogin";
 
@@ -50,11 +52,13 @@ class EscribirPost extends Component {
     render() {
         return (
             <div>
-                <a href="#" onClick={this.handleEscribirPostClick}>
+                <a href="" onClick={this.handleEscribirPostClick}>
                     <h2>Escribir Post</h2>
                 </a>
                 {this.state.showModal && (
+                    
                     <div>
+                        
                         <div className="modal-backdrop"></div> {/* Capa de fondo oscuro */}
                         <div className="modal">
                             <div className="modal-content">

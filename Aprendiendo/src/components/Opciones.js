@@ -58,28 +58,31 @@ class Opciones extends Component {
             <div>
                 <Header />
                 <BarraLateral />
-                <div id="opcionesContent">
-                    <h2>Opciones</h2>
-                    <div className="form-group">
-                        <label htmlFor="currentPassword">Contraseña Actual:</label>
-                        <input
-                            type="password"
-                            id="currentPassword"
-                            placeholder="Contraseña actual"
-                            onChange={this.handleCurrentPasswordChange} // Llamar a handleCurrentPasswordChange cuando cambie el valor del campo
-                        />
+                <div id="contenido">
+                    <div id="opcionesContent">
+                        <h2>Opciones</h2>
+                        <div className="form-group">
+                            <label htmlFor="currentPassword">Contraseña Actual:</label>
+                            <input
+                                type="password"
+                                id="currentPassword"
+                                placeholder="Contraseña actual"
+                                onChange={this.handleCurrentPasswordChange} // Llamar a handleCurrentPasswordChange cuando cambie el valor del campo
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="newPassword">Nueva Contraseña:</label>
+                            <input
+
+                                type="password"
+                                id="newPassword"
+                                placeholder="Nueva contraseña"
+                                onChange={this.handleInputChange} // Llamar a handleInputChange cuando cambie el valor del campo
+                            />
+                        </div>
+                        <button className="btn" onClick={this.handleChangePassword}>Cambiar Contraseña</button>
+                        {contraseñaActualizada && <p>¡La contraseña se ha actualizado!</p>} {/* Mostrar el mensaje de éxito si la contraseña se actualizó */}
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="newPassword">Nueva Contraseña:</label>
-                        <input
-                            type="password"
-                            id="newPassword"
-                            placeholder="Nueva contraseña"
-                            onChange={this.handleInputChange} // Llamar a handleInputChange cuando cambie el valor del campo
-                        />
-                    </div>
-                    <button className="btn" onClick={this.handleChangePassword}>Cambiar Contraseña</button>
-                    {contraseñaActualizada && <p>¡La contraseña se ha actualizado!</p>} {/* Mostrar el mensaje de éxito si la contraseña se actualizó */}
                 </div>
             </div>
         );

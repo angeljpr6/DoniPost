@@ -104,10 +104,7 @@ body {
   color: white;
 }
 
-#resultadoBusqueda {
-  margin-top: 100px;
-  color: white;
-}
+
 
 #post {
   margin-top: 125px;
@@ -314,6 +311,100 @@ body {
   cursor: pointer;
   
 }
+/* OPCIONES DEL PERFIL */
+#opcionesContent {
+  margin-top: 125px;
+  left: 50%;
+  background-color: #333179;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  width: 500px;
+  text-align: left;
+  text-indent: 2%;
+  overflow: hidden;
+  overflow-y: auto;
+  background-image: linear-gradient(to bottom, #333179, #32314e);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #aaa6ca;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.btn {
+  padding: 10px 15px;
+  background-color: #8e44ad;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #9b59b6;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+/* PERFILES BUSCADOS */
+.search-results-container {
+  background-color: #333179;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  width: 500px;
+  text-align: left;
+  text-indent: 2%;
+  overflow: hidden;
+  overflow-y: auto;
+  background-image: linear-gradient(to bottom, #333179, #32314e);
+}
+
+#resultadoBusqueda {
+  margin-top: 125px;
+  color: white;
+}
+
+.user-list {
+  list-style: none;
+  padding: 0;
+}
+
+.user {
+  margin-bottom: 10px;
+}
+
+.user a {
+  text-decoration: none;
+  color: white;
+}
+
+.registrarse{
+
+  color: #d6d6d6;
+ 
+}
 
 /* MODAL ESCRIBIR POST */
 
@@ -389,100 +480,6 @@ body {
   color: red;
 }
 
-/* OPCIONES DEL PERFIL */
-#opcionesContent {
-  position: fixed;
-  top: 33%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #333179;
-  padding: 20px;
-  border-radius: 10px;
-  color: white;
-  width: 500px;
-  text-align: left;
-  text-indent: 2%;
-  overflow: hidden;
-  overflow-y: auto;
-  background-image: linear-gradient(to bottom, #333179, #32314e);
-}
 
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  color: #aaa6ca;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-.btn {
-  padding: 10px 15px;
-  background-color: #8e44ad;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #9b59b6;
-}
-
-.btn-danger {
-  background-color: #e74c3c;
-}
-
-.btn-danger:hover {
-  background-color: #c0392b;
-}
-
-/* PERFILES BUSCADOS */
-.search-results-container {
-  position: fixed;
-  top: 122px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #333179;
-  padding: 20px;
-  border-radius: 10px;
-  color: white;
-  width: 500px;
-  text-align: left;
-  text-indent: 2%;
-  overflow: hidden;
-  overflow-y: auto;
-  background-image: linear-gradient(to bottom, #333179, #32314e);
-}
-
-.user-list {
-  list-style: none;
-  padding: 0;
-}
-
-.user {
-  margin-bottom: 10px;
-}
-
-.user a {
-  text-decoration: none;
-  color: white;
-}
-
-.registrarse{
-
-  color: #d6d6d6;
- 
-}
 
 
