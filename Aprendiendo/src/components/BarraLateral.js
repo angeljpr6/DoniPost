@@ -14,7 +14,6 @@ class BarraLateral extends Component {
                 <a href="/Opciones">
                     <h2>Opciones</h2>
                 </a>
-                <EscribirPost />
             </div>
         )
     }

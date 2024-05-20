@@ -7,6 +7,7 @@ import BarraLateral from "./BarraLateral";
 import { getBiography } from "../Recursos/UserLogin";
 import { getUserFollowing } from "../Recursos/UserLogin";
 import { getFollowing } from "../Recursos/UserLogin";
+import EscribirPost from "./EscribirPost";
 class Perfil extends Component{
 
     constructor(props) {
@@ -61,7 +62,9 @@ class Perfil extends Component{
                             <div id="datosPerfil">
                                 <p><a href="#"><strong>Seguidos</strong> {following} </a><a href="#"><strong>| Seguidores</strong> {followers}</a></p>
                             </div>
+                           
                         </div>
+                        <EscribirPost />
                         <div id="postsContent">
                             <PostUser />
                         </div>
