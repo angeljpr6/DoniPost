@@ -31,10 +31,6 @@ body {
   /* Centrar el texto */
 }
 
-#searchBar {
-  
-}
-
 #searchBar input[type="text"] {
   padding: 8px;
   background-color: #aaa6ca;
