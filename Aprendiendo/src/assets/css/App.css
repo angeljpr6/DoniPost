@@ -75,31 +75,46 @@ body {
     margin: 0 0 0 auto;
     margin-right: 10px;
   }
-
-  #barraLat {
-    margin-top: 100px;
-  }
-
 }
 
 #barraLat {
   position: fixed;
   text-align: center;
-  background-color: #32314e;
+  background: linear-gradient(145deg, #32314e, #454375);
   border-radius: 20px;
-  height: 25%;
+  height: 460px;
   width: 10%;
   min-height: 230px;
   min-width: 200px;
   margin-top: 125px;
   margin-left: 15%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Estilo para los enlaces dentro de la barra lateral */
 #barraLat a {
+  display: block;
   text-decoration: none;
   color: white;
+  padding: 15px 0;
+  margin: 10px 0;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efecto hover para los enlaces */
+#barraLat a:hover {
+  transform: scale(1.1);
+  background-color: #5a59a1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto hover para la barra lateral */
+#barraLat:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
 
 
 #post {
