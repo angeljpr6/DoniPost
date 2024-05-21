@@ -1,5 +1,5 @@
 import { Navigate } from 'react-router-dom';
-import logo from '../assets/images/image-Photoroom.png-Photoroom (2).png';
+import logo from '../assets/images/doni.png';
 import React, { Component } from 'react';
 
 class Header extends Component {
