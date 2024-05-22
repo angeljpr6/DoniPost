@@ -1,27 +1,17 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { getUser } from "../Recursos/UserLogin";
+import { getIdComent } from "../Recursos/ComentData"
 
-/**
- * Muetra un recuadro donde puedes escribir un texto y publicarlo en la base de datos
- */
 class EscribirComentario extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showModal: true, // Cambiado a true para que el modal esté abierto desde el principio
             contenidoDelPost: "",
             mensajeError: ""
         };
     }
 
-    /**
-     * Este método se llama cada vez que el usuario escribe en el textarea. 
-     * Actualiza el estado del componente con el nuevo valor del textarea, 
-     * siempre y cuando la longitud del texto no exceda los 500 caracteres.
-     * 
-     * @param {*} event 
-     */
     handleChange = (event) => {
         const inputValue = event.target.value;
         if (inputValue.length <= 500) {
@@ -29,61 +19,51 @@ class EscribirComentario extends Component {
         }
     }
 
-    /**
-     * Sube el post a la base de datos
-     */
     handlePublicarComentario = async () => {
         const { contenidoDelPost } = this.state;
-        const post = {
-            user: getUser(),
-            post: null,
+        const comentario = {
+            user: getUser(),  // Asumiendo que getUser() devuelve el usuario actual
             text: contenidoDelPost,
-            date: new Date()
+            idPost: getIdComent() // ID del post específico
         };
 
         try {
-            const response = await axios.post("http://localhost:3900/api/save", post);
-            console.log("Post creado:", response.data);
-            this.handleCloseModal();
-            window.location.reload();
+            const response = await axios.post("http://localhost:3900/api/postComent", comentario);
+            console.log("Comentario creado:", response.data);
+            this.setState({ contenidoDelPost: "", mensajeError: "" });
+            window.location.reload();  // Recargar la página para mostrar los nuevos comentarios
         } catch (error) {
-            console.error("Error al crear el post:", error);
-            this.setState({ mensajeError: "Error al crear el post. Inténtalo de nuevo." });
+            console.error("Error al crear el comentario:", error);
+            this.setState({ mensajeError: "Error al crear el comentario. Inténtalo de nuevo." });
         }
     }
 
     render() {
         return (
             <div>
-
-                <div>
-                    
-                    <div id="escribirPost" className="modal">
-                        <div className="modal-content">
-                           
-                            <h1>Escribe aquí</h1>
-                            <form>
-                                <textarea
-                                    id="contenidoDelPost"
-                                    value={this.state.contenidoDelPost}
-                                    onChange={this.handleChange}
-                                    maxLength="500"
-                                    rows="5"
-                                    cols="50"
-                                    style={{ resize: "none" }}
-                                />
-                                <p id="contadorCaracteres">{this.state.contenidoDelPost.length}/500</p>
-                            </form>
-                            <div id="publicarPost">
-                                <button id="botonPublicarPost" onClick={this.handlePublicarPost}><strong>Publicar</strong></button>
-                                {this.state.mensajeError && <p className="error">{this.state.mensajeError}</p>}
-                            </div>
+                <div id="escribirPost" className="modal">
+                    <div className="modal-content">
+                        <h1>Escribe aquí</h1>
+                        <form>
+                            <textarea
+                                id="contenidoDelPost"
+                                value={this.state.contenidoDelPost}
+                                onChange={this.handleChange}
+                                maxLength="500"
+                                rows="5"
+                                cols="50"
+                                style={{ resize: "none" }}
+                            />
+                            <p id="contadorCaracteres">{this.state.contenidoDelPost.length}/500</p>
+                        </form>
+                        <div id="publicarPost">
+                            <button id="botonPublicarPost" onClick={this.handlePublicarComentario}><strong>Publicar</strong></button>
+                            {this.state.mensajeError && <p className="error">{this.state.mensajeError}</p>}
                         </div>
                     </div>
                 </div>
-
             </div>
-        )
+        );
     }
 }
 

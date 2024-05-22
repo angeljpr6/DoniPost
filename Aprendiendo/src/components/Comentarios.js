@@ -3,13 +3,14 @@ import axios from "axios";
 import Header from "./Header";
 import BarraLateral from "./BarraLateral";
 import EscribirComentario from "./EscribirComentario";
+import { getIdComent } from "../Recursos/ComentData"
 import { formatearFecha } from "./PostCard"; // Asegúrate de que esta función esté definida
 
 class Comentarios extends Component {
     state = {
         comments: [],
         status: null,
-        postId: "664b065873cc50e2f94a9608" // ID del post específico
+        postId: getIdComent() // ID del post específico
     };
 
     componentDidMount() {

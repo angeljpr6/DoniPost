@@ -5,6 +5,7 @@ import repost from '../assets/images/repost.png'
 import axios from "axios";
 import { getUser } from "../Recursos/UserLogin";
 import { setUserData } from "../Recursos/UserData";
+import { setIdComent } from "../Recursos/ComentData"
 import { getUserData } from "../Recursos/UserData";
 import { Navigate } from "react-router-dom";
 
@@ -49,7 +50,7 @@ class PostCard extends Component {
     }
 
     handleCommentData = (id) => {
-        setCommentData(id);
+        setIdComent(id);
     }
 
     render() {
@@ -68,7 +69,7 @@ class PostCard extends Component {
                         <p>{post.text}</p>
                         <p id="date">{formatearFecha(post.date)}</p>
                         <div id="accionesPost">
-                            <a href="Post/comentarios" className="entrar-comentarios" onClick={(e) => {this.handleCommentData(post.id); }}>
+                            <a href="Post/comentarios" className="entrar-comentarios" onClick={(e) => {this.handleCommentData(post._id); }}>
                                 <img src={comentario} alt="iconoComentarios"></img>
                             </a>
                         </div>
