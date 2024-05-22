@@ -123,6 +123,31 @@ var controller={
             console.error('Error al eliminar el post:', error);
             res.status(500).json({ message: 'Error interno del servidor al eliminar el post', error });
         }
+    },
+
+    getPostById: (req, res) => {
+        
+        const idPost = req.params.idPost;
+
+        // Realizar la consulta a la base de datos para encontrar el comentario con el ID especificado
+        Post.findById(idPost)
+            .exec()
+            .then(post => {
+                if (!post) {
+                    return res.status(404).send({
+                        message: 'Comentario no encontrado'
+                    });
+                }
+                return res.status(200).send({
+                    post
+                });
+            })
+            .catch(err => {
+                console.error(err);
+                return res.status(500).send({
+                    message: 'Error al obtener el comentario'
+                });
+            });
     }
 
 }

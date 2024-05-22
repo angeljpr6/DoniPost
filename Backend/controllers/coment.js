@@ -3,7 +3,11 @@ var validator=require("validator")
 var Coment=require("../models/coment")
 
 var controller={
-    
+    /**
+     * Obtiene los comentarios
+     * @param {*} req 
+     * @param {*} res 
+     */
     getComents: (req, res) => {
         Coment.find({})
             .sort({ date: -1 }) 
@@ -25,7 +29,11 @@ var controller={
                 });
             });
     },
-
+    /**
+     * Obtiene los comentarios por id del post
+     * @param {*} req 
+     * @param {*} res 
+     */
     getComentsByPostId: (req, res) => {
         // Extraer el ID del post de los parámetros de la solicitud
         const postId = req.params.idPost;
@@ -51,7 +59,12 @@ var controller={
                 });
             });
     },
-
+    /**
+     * publica un comentario
+     * @param {*} req 
+     * @param {*} res 
+     * @returns 
+     */
     postComent: async (req, res) => {
         // Obtener parámetros
         var params = req.body;
