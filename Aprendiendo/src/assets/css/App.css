@@ -14,7 +14,9 @@ body {
 
 
 
-
+#errorCont {
+  color: red;
+}
 
 #logo img {
   height: 60px;

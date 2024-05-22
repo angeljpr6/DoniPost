@@ -8,6 +8,9 @@ import { getFollowingNumUserData } from "../Recursos/UserData";
 import { getUserDataFollowing } from "../Recursos/UserData";
 import { getUser } from "../Recursos/UserLogin";
 
+/**
+ * Muestra el apartado del perfil de un usario externo (Un usuario que no es el que esta usando la aplicacion)
+ */
 class PerfilUsers extends Component {
     constructor(props) {
         super(props);
@@ -18,10 +21,14 @@ class PerfilUsers extends Component {
             followers: null,
             loading: true,
             esSeguidor: false,
-            user: null // Añadir el usuario logueado al estado
+            user: null 
         };
     }
 
+
+    /**
+     * Carga los datos del usuario (la bio o si sigues al usuario)
+     */
     async componentDidMount() {
         const nombreUsuario = getUserData();
 
@@ -61,6 +68,9 @@ class PerfilUsers extends Component {
         }
     }
 
+    /**
+     * Funcion para seguir al usuario del que ves el perfil
+     */
     seguir = async () => {
         try {
             await axios.post("http://localhost:3900/api/follow", {
@@ -74,6 +84,9 @@ class PerfilUsers extends Component {
         }
     }
     
+    /**
+     * Funcion para dejar de seguir al usuario del que ves el perfil
+     */
     dejarDeSeguir = async () => {
         console.log(`${this.state.nombreUsuario}  ${this.state.user}`);
         try {

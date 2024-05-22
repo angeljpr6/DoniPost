@@ -15,10 +15,13 @@ class EscribirPost extends Component {
         };
     }
 
-    handleCloseModal = () => {
-        this.setState({ showModal: false, contenidoDelPost: "", mensajeError: "" });
-    }
-
+    /**
+     * Este método se llama cada vez que el usuario escribe en el textarea. 
+     * Actualiza el estado del componente con el nuevo valor del textarea, 
+     * siempre y cuando la longitud del texto no exceda los 500 caracteres.
+     * 
+     * @param {*} event 
+     */
     handleChange = (event) => {
         const inputValue = event.target.value;
         if (inputValue.length <= 500) {
@@ -26,6 +29,9 @@ class EscribirPost extends Component {
         }
     }
 
+    /**
+     * Sube el post a la base de datos
+     */
     handlePublicarPost = async () => {
         const { contenidoDelPost } = this.state;
         const post = {

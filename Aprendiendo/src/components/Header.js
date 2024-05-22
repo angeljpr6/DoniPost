@@ -10,6 +10,10 @@ class Header extends Component {
         redirect: false
     }
 
+    /**
+     * Te redirige a la pagina de la busqueda
+     * @param {*} e 
+     */
     redirectToSearch = (e) => {
         e.preventDefault();
 
