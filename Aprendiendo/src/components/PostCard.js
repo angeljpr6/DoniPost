@@ -17,6 +17,8 @@ class PostCard extends Component {
         status: null
     };
     
+    
+
     componentDidMount() {
         this.getPosts();
     }
@@ -60,7 +62,7 @@ class PostCard extends Component {
                             </a>
                         </h3>
                         <p>{post.text}</p>
-                        <p id="date">{post.date}</p>
+                        <p id="date">{formatearFecha(post.date)}</p>
                         <div id="accionesPost">
                             <a href="#" className="dar-me-gusta">
                                 <img src={meGusta} alt="iconoMeGusta"></img>
@@ -95,4 +97,40 @@ class PostCard extends Component {
     }
 }
 
+
+function formatearFecha(fechaStr) {
+    // Crear un objeto Date a partir de la cadena de fecha
+    var fecha = new Date(fechaStr);
+    
+    // Obtener los componentes de la fecha
+    var dia = fecha.getDate();
+    var mes = fecha.getMonth() + 1; // Se agrega 1 porque los meses comienzan en 0
+    var año = fecha.getFullYear();
+    var horas = fecha.getHours();
+    var minutos = fecha.getMinutes();
+    var segundos = fecha.getSeconds();
+    
+    // Asegurarse de que los componentes tengan dos dígitos
+    if (dia < 10) {
+        dia = '0' + dia;
+    }
+    if (mes < 10) {
+        mes = '0' + mes;
+    }
+    if (horas < 10) {
+        horas = '0' + horas;
+    }
+    if (minutos < 10) {
+        minutos = '0' + minutos;
+    }
+    if (segundos < 10) {
+        segundos = '0' + segundos;
+    }
+    
+    // Formatear la fecha en el formato deseado (dd/mm/yyyy hh:mm:ss)
+    var fechaFormateada = dia + '/' + mes + '/' + año + ' ' + horas + ':' + minutos + ':' + segundos;
+    
+    return fechaFormateada;
+}
+export{formatearFecha}
 export default PostCard
