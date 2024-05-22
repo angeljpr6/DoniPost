@@ -1,6 +1,9 @@
 import { Component } from "react";
 
 
+/**
+ * Este componente muestra una barra lateral con la que puedes navegar por la aplicacion
+ */
 class BarraLateral extends Component {
     render() {
         return (
