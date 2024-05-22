@@ -1,5 +1,5 @@
 import { Component } from "react";
-import EscribirPost from "./EscribirPost";
+
 
 class BarraLateral extends Component {
     render() {
