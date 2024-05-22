@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import axios from "axios";
 import { getUser } from "../Recursos/UserLogin";
 
+/**
+ * Muetra un recuadro donde puedes escribir un texto y publicarlo en la base de datos
+ */
 class EscribirPost extends Component {
     constructor(props) {
         super(props);
