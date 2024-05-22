@@ -8,6 +8,7 @@ var router = express.Router();
 //rutas
 router.get("/getcoments", ComentController.getComents);
 router.get("/getcomentsByPostId/:idPost", ComentController.getComentsByPostId);
+router.post("/postComent",ComentController.postComent)
 
 
 

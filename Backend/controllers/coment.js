@@ -52,6 +52,47 @@ var controller={
             });
     },
 
+    postComent: async (req, res) => {
+        // Obtener parámetros
+        var params = req.body;
+    
+        try {
+            // Validar datos
+            var validate_user = !validator.isEmpty(params.user);
+            var validate_text = !validator.isEmpty(params.text);
+    
+            if (!validate_user || !validate_text) {
+                return res.status(404).send({
+                    message: "No hay artículos"
+                });
+            }
+    
+            // Crear objeto
+            var coment = new Coment({
+                user: params.user,
+                text: params.text,
+                idPost: params.idPost
+            });
+    
+            // Guardar en la base de datos
+            const comentStored = await coment.save();
+    
+            if (!comentStored) {
+                throw new Error('El post no se guardó correctamente.');
+            }
+    
+            return res.status(200).send({
+                coment: comentStored
+            });
+        } catch (err) {
+            console.error(err);
+            return res.status(500).send({
+                message: 'Error al guardar el post en la base de datos.'
+            });
+        }
+    },
+
+
 }
     
 
