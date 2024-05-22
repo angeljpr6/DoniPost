@@ -4,7 +4,6 @@ import axios from 'axios';
 import { setUserData } from "../Recursos/UserData";
 import { getUserData } from "../Recursos/UserData";
 import { getUser } from '../Recursos/UserLogin'; // Importar la función getUser
-
 import Header from './Header';
 import BarraLateral from './BarraLateral';
 

@@ -5,6 +5,7 @@ import comentario from '../assets/images/comentario.png'
 import repost from '../assets/images/repost.png'
 import axios from "axios";
 import { getUserData } from "../Recursos/UserData";
+import { formatearFecha } from "./PostCard";
 
 
 class PostUserData extends Component{
@@ -43,7 +44,7 @@ class PostUserData extends Component{
                     <div id="post" key={post._id}>
                         <h3>@{post.user}</h3>
                         <p>{post.text}</p>
-                        <p id="date">{post.date}</p>
+                        <p id="date">{formatearFecha(post.date)}</p>
                         <div id = "accionesPost">
                             <a href="#" className="dar-me-gusta">
                                 <img src={comentario} alt="iconoMeGusta"></img>

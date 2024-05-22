@@ -5,6 +5,7 @@ import meGusta from '../assets/images/me-gusta.png';
 import comentario from '../assets/images/comentario.png';
 import basura from '../assets/images/eliminar.png';
 import repost from '../assets/images/repost.png';
+import { formatearFecha } from "./PostCard";
 
 class PostUser extends Component {
 
@@ -63,7 +64,7 @@ class PostUser extends Component {
                         )}
                         <h3>@{post.user}</h3>
                         <p>{post.text}</p>
-                        <p id="date">{post.date}</p>
+                        <p id="date">{formatearFecha(post.date)}</p>
                         <div id="accionesPost">
                             <a href="#" className="dar-me-gusta">
                                 <img src={comentario} alt="iconoMeGusta"></img>
@@ -96,5 +97,6 @@ class PostUser extends Component {
         }
     }
 }
+
 
 export default PostUser;
