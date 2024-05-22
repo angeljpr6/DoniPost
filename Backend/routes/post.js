@@ -12,6 +12,7 @@ router.post("/save",PostController.save)
 router.get("/get",PostController.getPosts)
 router.get("/getuserposts/:user",PostController.getPostByUser)
 router.delete("/posts/:postId", PostController.deletePost);
+router.get("/getPostById/:idPost",PostController.getPostById);
 
 
 module.exports=router;
