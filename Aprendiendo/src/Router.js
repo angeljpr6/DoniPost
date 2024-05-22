@@ -8,6 +8,7 @@ import SearchResults from "./components/SearchResults"; // Importa el componente
 import PerfilUsers from "./components/PerfilUsers";
 import Opciones from "./components/Opciones";
 import Register from "./components/Register";
+import Comentarios from "./components/Comentarios";
 
 class Router extends Component {
     render() {
@@ -18,6 +19,7 @@ class Router extends Component {
                     <Route path="/" element={<Navigate to="/login" />} />
                     <Route path="/login" element={<LoginForm />} />
                     <Route path="/Inicio" element={<Inicio />} />
+                    <Route path="/Post/comentarios" element={<Comentarios />} />
                     <Route path="/Perfil" element={<Perfil />} />
                     <Route path="/Perfil/user" element={<PerfilUsers />} />
                     <Route path="/Opciones" element={<Opciones />} />
