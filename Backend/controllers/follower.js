@@ -4,16 +4,21 @@ var Post = require('../models/post');
 var Follower = require('../models/follower');
 
 var controller = {
-    // Método para obtener los posts de los usuarios seguidos por un usuario específico
-    getPostsByFollowingUser: async (req, res) => {
+    /**
+     * Método para obtener los posts de los usuarios seguidos por un usuario específico
+     * @param {*} req 
+     * @param {*} res 
+     * @returns 
+     */
+     getPostsByFollowingUser: async (req, res) => {
         try {
-            const username = req.params.username; // Nombre de usuario del cual se desea obtener los posts
+            const username = req.params.username; 
     
             // Buscar los nombres de usuario de los usuarios seguidos por el usuario especificado
             const following = await Follower.find({ follower: username }).select('following');
             const followingUsernames = following.map(follow => follow.following);
     
-            // Buscar todos los posts cuyo autor esté en el array de nombres de usuario de los usuarios seguidos,
+            // Buscar todos los posts cuyo autor esté en el array de nombres de usuario de los usuarios seguidos
             // ordenados por fecha en orden descendente
             const posts = await Post.find({ user: { $in: followingUsernames } }).sort({ date: -1 });
     
@@ -23,9 +28,16 @@ var controller = {
             return res.status(500).send({ message: 'Error al obtener los posts de los usuarios seguidos' });
         }
     },
+
+    /**
+     * Método para obtener los usuarios que sigue un usuario
+     * @param {*} req 
+     * @param {*} res 
+     * @returns 
+     */
     getFollowings: async (req, res) => {
         try {
-            const username = req.params.username; // Nombre de usuario del cual se desea obtener los posts
+            const username = req.params.username; 
 
             // Buscar los nombres de usuario de los usuarios seguidos por el usuario especificado
             const following = await Follower.find({ follower: username }).select('following');
@@ -36,7 +48,12 @@ var controller = {
             return res.status(500).send({ message: 'Error al obtener los posts de los usuarios seguidos' });
         }
     },
-
+    /**
+     * Método para obtener los followers de un usuario
+     * @param {*} req 
+     * @param {*} res 
+     * @returns 
+     */
     getFollowers: async (req, res) => {
         try {
             const username = req.params.username; // Nombre de usuario del cual se desea obtener los followers
@@ -51,7 +68,12 @@ var controller = {
         }
     
     },
-
+    /**
+     * Método para seguir usuario
+     * @param {*} req 
+     * @param {*} res 
+     * @returns 
+     */
     seguir: async (req, res) => {
         var params = req.body;
     
@@ -89,7 +111,12 @@ var controller = {
             });
         }
     },
-
+    /**
+     * Método para dejar de seguir usuario
+     * @param {*} req 
+     * @param {*} res 
+     * @returns 
+     */
     dejarDeSeguir: async (req, res) => {
         var params = req.body;
         console.log(req);
@@ -128,7 +155,12 @@ var controller = {
             });
         }
     },
-
+    /**
+     * Método para obetenr todos los seguimientos de usuarios
+     * @param {*} req 
+     * @param {*} res 
+     * @returns 
+     */
     getAllFollowers: async (req, res) => {
         try {
             const allDocuments = await Follower.find({});
@@ -138,9 +170,6 @@ var controller = {
             return res.status(500).send({ message: 'Error al obtener todos los documentos de la colección' });
         }
     }
-
-
-
 };
 
 module.exports = controller;

@@ -48,7 +48,12 @@ var controller = {
             res.status(500).json({ message: 'Internal server error', error });
         }
     },
-
+    /**
+     * Valida la contraseña
+     * @param {*} req 
+     * @param {*} res 
+     * @returns 
+     */
     validatePassword: async (req, res) => {
         const { username, password } = req.body;
         try {
@@ -63,7 +68,12 @@ var controller = {
             res.status(500).json({ message: 'Error al validar la contraseña actual', error });
         }
     },
-
+    /**
+     * Cambia la contraseña
+     * @param {*} req 
+     * @param {*} res 
+     * @returns 
+     */
     changePassword: async (req, res) => {
         const { username, newPassword } = req.body;
         console.log(newPassword)
@@ -79,6 +89,13 @@ var controller = {
             res.status(500).json({ message: 'Error interno del servidor', error });
         }
     },
+
+    /**
+     * Devuelve usuarios por nombre
+     * @param {*} req 
+     * @param {*} res 
+     * @returns 
+     */
     searchUsers: async (req, res) => {
         try {
             const { text } = req.params;
@@ -94,6 +111,13 @@ var controller = {
             res.status(500).json({ message: 'Error interno del servidor' });
         }
     },
+
+    /**
+     * Obtiene la biografía de los usuarios
+     * @param {*} req 
+     * @param {*} res 
+     * @returns 
+     */
     getUserBio: async (req, res) => {
         try {
             const username = req.params.username;
@@ -106,8 +130,15 @@ var controller = {
             res.status(500).send({ message: 'Error al obtener la biografía del usuario' });
         }
     },
+
+    /**
+     * Crea un nuevo usuario
+     * @param {*} req 
+     * @param {*} res 
+     * @returns 
+     */
     register: async (req, res) => {
-        // Obtener parámetros
+      
         var params = req.body;
     
         try {
@@ -121,7 +152,6 @@ var controller = {
                 });
             }
     
-            // Crear objeto
             var user = new User({
                 name: params.user,
                 password: params.password,
@@ -132,7 +162,7 @@ var controller = {
             const userStored = await user.save();
     
             if (!userStored) {
-                throw new Error('El post no se guardó correctamente.');
+                throw new Error('El usuario no se guardó correctamente.');
             }
     
             return res.status(200).send({
@@ -141,7 +171,7 @@ var controller = {
         } catch (err) {
             console.error(err);
             return res.status(500).send({
-                message: 'Error al guardar el post en la base de datos.'
+                message: 'Error al guardar el usuari en la base de datos.'
             });
         }
     },

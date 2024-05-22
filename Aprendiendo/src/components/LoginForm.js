@@ -3,18 +3,25 @@ import { useNavigate } from 'react-router-dom';
 import { setFollowers, setUser } from '../Recursos/UserLogin';
 import { setBiography } from '../Recursos/UserLogin';
 
-
+/**
+ * Componente Formulario de login
+ * @returns 
+ */
 const LoginForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
-
+    /**
+     * Botón para hacer el login
+     * @param {*} event 
+     */
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         try {
+            //se valida usuario y contraseña
             const response = await fetch('http://localhost:3900/api/login', {
                 method: 'POST',
                 headers: {
@@ -30,6 +37,7 @@ const LoginForm = () => {
             const result = await response.json();
 
             if (response.status === 200) {
+                //se abra la ventana de inicio
                 setUser(result.user.name)
                 setBiography(result.user.biography)
                 navigate('/Inicio');
@@ -37,7 +45,7 @@ const LoginForm = () => {
                 setErrorMessage(result.message);
             }
         } catch (error) {
-            console.error('Error during login:', error);
+            console.error('Error durante el login:', error);
             setErrorMessage('Usuario o contraseña incorrectos');
         }
     };

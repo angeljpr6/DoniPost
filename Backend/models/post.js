@@ -9,6 +9,12 @@ var PostSchema= Schema({
     date : {type: Date, default: Date.now}
 });
 
+/**
+ * Método para poder obtener posts por nombre de usuario
+ * @param {*} user 
+ * @param {*} callback 
+ * @returns 
+ */
 PostSchema.statics.findByUser = function(user, callback) {
     return this.find({ user: user }, callback);
 };
