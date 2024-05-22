@@ -252,6 +252,17 @@ body {
   transform: scale(1.05);
 }
 
+/*Comentarios*/
+#contenidoComentarios{
+  margin-top: 125px;
+  margin-left: 35%;
+}
+#escribirPost{
+  border: solid red;
+
+}
+
+
 /*Login*/
 #login-form {
   background-image: linear-gradient(to bottom, #333179, #32314e);

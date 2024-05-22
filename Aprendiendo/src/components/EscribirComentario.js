@@ -58,7 +58,7 @@ class EscribirComentario extends Component {
 
                 <div>
                     
-                    <div className="modal">
+                    <div id="escribirPost" className="modal">
                         <div className="modal-content">
                            
                             <h1>Escribe aquí</h1>

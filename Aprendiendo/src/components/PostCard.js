@@ -48,6 +48,10 @@ class PostCard extends Component {
         console.log(getUserData())
     }
 
+    handleCommentData = (id) => {
+        setCommentData(id);
+    }
+
     render() {
         if (this.state.posts.length >= 1) {
 
@@ -64,13 +68,7 @@ class PostCard extends Component {
                         <p>{post.text}</p>
                         <p id="date">{formatearFecha(post.date)}</p>
                         <div id="accionesPost">
-                            <a href="#" className="dar-me-gusta">
-                                <img src={meGusta} alt="iconoMeGusta"></img>
-                            </a>
-                            <a href="#" className="dar-repost">
-                                <img src={repost} alt="iconoRePost"></img>
-                            </a>
-                            <a href="#" className="entrar-comentarios">
+                            <a href="Post/comentarios" className="entrar-comentarios" onClick={(e) => {this.handleCommentData(post.id); }}>
                                 <img src={comentario} alt="iconoComentarios"></img>
                             </a>
                         </div>
