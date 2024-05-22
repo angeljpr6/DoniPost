@@ -12,11 +12,15 @@ const Register = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
-
+    /**
+     * Boton para registrarse
+     * @param {*} event 
+     */
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         try {
+            //Llama al método de registro en la api pasandole los parametros
             const response = await fetch('http://localhost:3900/api/register', {
                 method: 'POST',
                 headers: {
@@ -39,7 +43,7 @@ const Register = () => {
                 setErrorMessage(result.message);
             }
         } catch (error) {
-            console.error('Error during registration:', error);
+            console.error('Error durante el registro:', error);
             setErrorMessage('Error en el registro. Inténtalo de nuevo.');
         }
     };

@@ -1,5 +1,5 @@
 import { Component } from "react";
-import EscribirPost from "./EscribirPost";
+
 
 /**
  * Este componente muestra una barra lateral con la que puedes navegar por la aplicacion

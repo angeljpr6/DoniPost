@@ -6,7 +6,6 @@ var router = express.Router();
 
 
 //rutas
-
 router.get("/getusers", UserController.getUser)
 router.post("/login", UserController.validateUser)
 router.post("/changepassword", UserController.changePassword); // Nueva ruta para cambiar contraseña

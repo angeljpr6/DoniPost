@@ -8,6 +8,10 @@ import { getBiography } from "../Recursos/UserLogin";
 import { getUserFollowing } from "../Recursos/UserLogin";
 import { getFollowing } from "../Recursos/UserLogin";
 import EscribirPost from "./EscribirPost";
+
+/**
+ * Componente perfil
+ */
 class Perfil extends Component{
 
     constructor(props) {
@@ -17,10 +21,11 @@ class Perfil extends Component{
           bio: null,
           following: null,
           followers:null,
-          loading: true, // Para manejar la carga de datos
+          loading: true, 
         };
       }
-    
+      
+      //Se obtiene antes que nada la información del usuario
       async componentDidMount() {
         const nombreUsuario = getUser();
        
@@ -32,7 +37,7 @@ class Perfil extends Component{
         const followers=getUserFollower()
         
         
-    
+        //Se carga la inforamción en el state
         this.setState({
           nombreUsuario:nombreUsuario,
           bio:bio,

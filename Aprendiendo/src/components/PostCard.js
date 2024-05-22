@@ -8,6 +8,7 @@ import { setUserData } from "../Recursos/UserData";
 import { getUserData } from "../Recursos/UserData";
 import { Navigate } from "react-router-dom";
 
+
 class PostCard extends Component {
 
 
@@ -15,10 +16,13 @@ class PostCard extends Component {
         posts: [],
         status: null
     };
-
+    
     componentDidMount() {
         this.getPosts();
     }
+    /**
+     * Obtiene los posts de los usuarios a los que sigue el usuario logueado
+     */
     getPosts = () => {
         const user = getUser()
 
@@ -33,7 +37,10 @@ class PostCard extends Component {
 
             });
     }
-
+    /**
+     * Cambia el userData al clickar en el nombre del usuario
+     * @param {*} user 
+     */
     handleUserClick = (user) => {
         setUserData(user);
         console.log(getUserData())

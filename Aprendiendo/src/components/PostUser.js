@@ -16,7 +16,9 @@ class PostUser extends Component {
     componentDidMount() {
         this.getPostsByUser();
     }
-
+    /**
+     * Obtiene los post d eun usuario en concreto
+     */
     getPostsByUser = () => {
         const user = getUser();
         axios.get(`http://localhost:3900/api/getuserposts/${user}`)
@@ -27,7 +29,10 @@ class PostUser extends Component {
                 });
             });
     }
-
+    /**
+     * Borra el post seleccionado
+     * @param {*} postId 
+     */
     handleDeletePost = (postId) => {
         axios.delete(`http://localhost:3900/api/posts/${postId}`)
             .then(res => {

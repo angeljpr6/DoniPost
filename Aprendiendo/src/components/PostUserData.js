@@ -18,7 +18,9 @@ class PostUserData extends Component{
         this.getPostsByUser();
     }
 
-    
+    /**
+     * Obtiene los post del usuario
+     */
     getPostsByUser = () => {
         const user=getUserData();
         axios.get(`http://localhost:3900/api/getuserposts/${user}`)

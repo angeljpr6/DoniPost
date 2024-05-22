@@ -3,14 +3,13 @@ var validator=require("validator")
 var Post=require("../models/post")
 
 var controller={
-    cosas: function(req,res){
-        return res.status(200).send({
-            texto: "Buenas tardes",
-            usuario: 53534,
-        
-        })
-    },
-
+    
+    /**
+     * Método para crear post
+     * @param {*} req 
+     * @param {*} res 
+     * @returns 
+     */
     save: async (req, res) => {
         // Obtener parámetros
         var params = req.body;
@@ -49,10 +48,14 @@ var controller={
             });
         }
     },
-
+    /**
+     * Método para obetenr posts
+     * @param {*} req 
+     * @param {*} res 
+     */
     getPosts: (req, res) => {
         Post.find({})
-            .sort({ date: -1 }) // Ordenar por fecha en orden descendente
+            .sort({ date: -1 }) 
             .exec()
             .then(posts => {
                 if (!posts || posts.length === 0) {
@@ -71,6 +74,12 @@ var controller={
                 });
             });
     },
+    /**
+     * Método para obetenr posts por usuario
+     * @param {*} req 
+     * @param {*} res 
+     * @returns 
+     */
     getPostByUser: (req, res) => {
         const postUser = req.params.user;
     
@@ -81,7 +90,7 @@ var controller={
         }
     
         Post.findByUser(postUser)
-            .sort({ date: -1 }) // Ordenar por fecha en orden descendente
+            .sort({ date: -1 }) 
             .exec((err, post) => {
                 if (err) {
                     return res.status(500).send({
@@ -99,8 +108,13 @@ var controller={
             });
     },
     
+    /**
+     * Método para eliminar post por id
+     * @param {*} req 
+     * @param {*} res 
+     */
     deletePost: async (req, res) => {
-        const postId = req.params.postId; // Obtener el ID del post de los parámetros de la URL
+        const postId = req.params.postId; 
         try {
             // Eliminar el post por su ID
             await Post.findByIdAndDelete(postId);

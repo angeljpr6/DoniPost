@@ -8,10 +8,17 @@ import { getUser } from '../Recursos/UserLogin'; // Importar la función getUser
 import Header from './Header';
 import BarraLateral from './BarraLateral';
 
+/**
+ * Muestra los resultado de la busqueda
+ * @returns 
+ */
 const SearchResults = () => {
     const { search } = useParams();
     const [searchResults, setSearchResults] = useState([]);
 
+    /**
+     * Devuelve los usuarios que coinciden con el nombre que se ha buscado
+     */
     useEffect(() => {
         const fetchSearchResults = async () => {
             try {
